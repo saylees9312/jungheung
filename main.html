@@ -20,10 +20,16 @@
         <header id="header">
             <!-- .inner>h1.logo+(nav>ul.gnb+ul.util-menu)+button:button -->
             <div class="inner">
-                <h1 class="logo">
-                    <a href="#"><img src="./img/" alt="중흥그룹" /></a>
-                </h1>
                 <nav>
+                    <h1 class="logo">
+                        <a href="#"
+                            ><figure>
+                                <img
+                                    src="./img/logo-white.png"
+                                    alt="중흥그룹"
+                                /></figure
+                        ></a>
+                    </h1>
                     <ul class="gnb">
                         <li><a href="#">회사소개</a></li>
                         <li><a href="#">사업소개</a></li>
@@ -33,20 +39,18 @@
                     </ul>
                     <ul class="util-menu">
                         <li>
-                            <button class="btn btn-util">
-                                <i class="hidden">영어번역</i>
-                            </button>
+                            <button class="btn-eng hidden">영어번역</button>
+                            <label for="btn-eng"></label>
                         </li>
                         <li>
-                            <button class="btn btn-util">
-                                <i class="hidden">검색하기</i>
-                            </button>
+                            <button class="btn-shearch hidden">검색하기</button>
+                            <label for="btn-shearch"></label>
                         </li>
                     </ul>
+                    <button type="button" class="btn-menu">
+                        <i class="hidden">메뉴</i>
+                    </button>
                 </nav>
-                <button type="button" class="btn-menu">
-                    <i class="hidden">메뉴</i>
-                </button>
             </div>
         </header>
         <hr />
@@ -124,111 +128,49 @@
             <!-- //e businessclassification -->
 
             <section class="business">
-                <div class="inner">
-                    <h3 class="title">business</h3>
-                    <div class="swiper business-wrap">
-                        <!-- Slider main container -->
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            <div class="swiper-slide">
-                                <figure><img src="#" alt="" /></figure>
-                                <div class="business-con">
-                                    <dl>
-                                        <dt>건축물이름</dt>
-                                        <dd>건축물 설명</dd>
-                                    </dl>
-                                    <ul class="business-list">
-                                        <li>
-                                            <figure>
-                                                <img
-                                                    src="./img/202005211702255410898-2-142252.jpg"
-                                                    alt=""
-                                                />
-                                            </figure>
-                                            <p>부천 버들초등학교</p>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="#" alt="" />
-                                            </figure>
-                                            <p>중흥 s클래스</p>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="#" alt="" />
-                                            </figure>
-                                            <p>중흥 s클래스</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="business-strong">
-                                    <strong>새로운 미래를 건설하는 중흥</strong>
-                                </div>
+                <h3 class="title">business</h3>
+                <div class="swiper business-wrap">
+                    <!-- Slider main container -->
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide business-visual">
+                            <figure>
+                                <img src="./img/08_신대배후단지.jpg" alt="" />
+                            </figure>
+                            <div class="business-con">
+                                <dl>
+                                    <dt>건축물이름</dt>
+                                    <dd>건축물 설명</dd>
+                                </dl>
+                                <ul class="business-list">
+                                    <li>
+                                        <figure>
+                                            <img
+                                                src="./img/202005211702255410898-2-142252.jpg"
+                                                alt=""
+                                            />
+                                        </figure>
+                                        <p>부천 버들초등학교</p>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="#" alt="" />
+                                        </figure>
+                                        <p>중흥 s클래스</p>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="#" alt="" />
+                                        </figure>
+                                        <p>중흥 s클래스</p>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="swiper-slide">
-                                <figure><img src="#" alt="" /></figure>
-                                <div class="business-con">
-                                    <dl>
-                                        <dt>건축물이름</dt>
-                                        <dd>건축물 설명</dd>
-                                    </dl>
-                                    <ul class="business-list">
-                                        <li>
-                                            <figure>
-                                                <img src="./img/" alt="" />
-                                            </figure>
-                                            <p>부천 버들초등학교</p>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="#" alt="" />
-                                            </figure>
-                                            <p>중흥 s클래스</p>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="#" alt="" />
-                                            </figure>
-                                            <p>중흥 s클래스</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="business-strong">
-                                    <strong>새로운 미래를 건설하는 중흥</strong>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <figure><img src="#" alt="" /></figure>
-                                <div class="business-con">
-                                    <dl>
-                                        <dt>건축물이름</dt>
-                                        <dd>건축물 설명</dd>
-                                    </dl>
-                                    <ul class="business-list">
-                                        <li>
-                                            <figure>
-                                                <img src="./img/" alt="" />
-                                            </figure>
-                                            <p>부천 버들초등학교</p>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="#" alt="" />
-                                            </figure>
-                                            <p>중흥 s클래스</p>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="#" alt="" />
-                                            </figure>
-                                            <p>중흥 s클래스</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="business-strong">
-                                    <strong>새로운 미래를 건설하는 중흥</strong>
-                                </div>
+                            <div class="business-strong">
+                                <strong
+                                    >새로운 미래를 <br />건설하는 중흥</strong
+                                >
                             </div>
                         </div>
                     </div>
@@ -240,7 +182,7 @@
             <section class="ethical-management">
                 <div class="inner">
                     <h3 class="title">윤리경영</h3>
-                    <ul>
+                    <ul class="ethical-management-list">
                         <li><a href="#">윤리경영</a></li>
                         <li><a href="#">장학사업</a></li>
                         <li><a href="#">협력업체</a></li>
