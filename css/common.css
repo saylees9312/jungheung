@@ -1,0 +1,219 @@
+@charset 'utf-8';
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+:root {
+    font-size: 62.5%;
+    color: #666;
+    --bg-color: #f5f5f5;
+    --main-color: rgba(15, 33, 139, 1);
+    --main-color2: rgba(127, 127, 115);
+    --sub-color1: rgba(8, 29, 88);
+    --sub-color2: rgba(61, 70, 73);
+    --main-color-dark: #010726;
+    --main-color60p: rgba(15, 33, 139, 0.6);
+    --main-color2-60p: rgba(127, 127, 115, 0.6);
+    --sub-color3: #e1e3ec;
+    --white10p: rgba(255, 255, 255, 0.1);
+    --white20p: rgba(255, 255, 255, 0.2);
+    --white30p: rgba(255, 255, 255, 0.3);
+    --white40p: rgba(255, 255, 255, 0.4);
+    --white50p: rgba(255, 255, 255, 0.5);
+    --white60p: rgba(255, 255, 255, 0.6);
+    --white70p: rgba(255, 255, 255, 0.7);
+    --white80p: rgba(255, 255, 255, 0.8);
+    --white90p: rgba(255, 255, 255, 0.9);
+    --black10p: rgba(0, 0, 0, 0.1);
+    --black20p: rgba(0, 0, 0, 0.2);
+    --black30p: rgba(0, 0, 0, 0.3);
+    --black40p: rgba(0, 0, 0, 0.4);
+    --black50p: rgba(0, 0, 0, 0.5);
+    --black60p: rgba(0, 0, 0, 0.6);
+    --black70p: rgba(0, 0, 0, 0.7);
+    --black80p: rgba(0, 0, 0, 0.8);
+    --black90p: rgba(0, 0, 0, 0.9);
+}
+
+::selection {
+    background: var(--main-color);
+    color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--main-color-dark);
+}
+
+hr,
+.hidden {
+    position: absolute;
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    text-indent: -999px;
+    clip: rect(-1px);
+    overflow: hidden;
+}
+
+body {
+    font: 1.6rem/1.5 "Pretendard", sans-serif;
+}
+
+#header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header nav .logo figure {
+    width: 11rem;
+}
+
+#header nav .logo figure img {
+    width: 100%;
+    object-fit: contain;
+}
+
+#header nav .btn-menu {
+    display: none;
+}
+
+#header nav .gnb {
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header nav .gnb li a {
+    padding: 2rem;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+#header nav .util-menu {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+}
+
+#header nav .util-menu li label::before {
+    content: "";
+    display: block;
+    width: 2.4rem;
+    aspect-ratio: 1;
+    background: no-repeat 50% / contain;
+}
+
+#header nav .util-menu li:first-child label::before {
+    background-image: url(../img/ico-eng.svg);
+}
+#header nav .util-menu li:last-child label::before {
+    background-image: url(../img/ico-search.svg);
+}
+
+section {
+    padding: 10rem 0;
+}
+
+#footer {
+    background: var(--main-color-dark);
+    color: #fff;
+    padding: 10.5rem 0;
+}
+
+.foot-title strong {
+    font-weight: 700;
+    font-size: 4.4rem;
+}
+
+.foot-title a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 19.4rem;
+    height: 5.8rem;
+
+    padding: 1rem 0;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.foot-title a::after {
+    content: "";
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background: #000 no-repeat 50%;
+}
+
+.foot-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.foot-adress {
+    margin-top: 15rem;
+}
+
+.foot-adress div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 3.5rem;
+
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+.foot-adress address {
+    margin-top: 2.4rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2.3rem;
+}
+
+.Copyright {
+    margin-top: 1.6rem;
+    font-weight: 300;
+}
+
+.sns-list {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    gap: 3.7rem;
+}
+
+.sns-list li a::before {
+    content: "";
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    background: #000 no-repeat 50%;
+}
