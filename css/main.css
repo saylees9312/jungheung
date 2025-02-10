@@ -47,6 +47,30 @@
     object-fit: cover;
 }
 
+.visual-btn-prev,
+.visual-btn-next {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.3) no-repeat 50% / contain;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.visual-btn-prev {
+    left: 2vw;
+    background-image: url(../img/btn-ico-prev.svg);
+}
+
+.visual-btn-next {
+    right: 2vw;
+    background-image: url(../img/btn-ico-next.svg);
+}
+
 .visual .visual-title {
     font-weight: 400;
     font-size: 60px;
@@ -58,10 +82,6 @@
     transform: translate(-50%, -20%);
 
     z-index: 1;
-}
-
-.business-classification {
-    /* margin: 20rem 0 10rem; */
 }
 
 .business-classification-list {
@@ -191,7 +211,7 @@
 }
 
 .business-con dl {
-    padding: 4rem 0;
+    padding: 5rem 26rem 0 0;
     height: calc(70rem - 23rem - (23rem / 2));
 }
 .business-con dl dt {
@@ -200,10 +220,12 @@
     color: var(--main-color);
 }
 .business-con dl dd {
+    margin-top: 2rem;
     font-size: 1.8rem;
 }
 
 .business-list {
+    margin-top: 10rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -261,7 +283,7 @@
 .ethical-management-list li {
     width: 35rem;
     height: 55rem;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     border-radius: 2.5rem;
 
     display: flex;
@@ -491,7 +513,7 @@
 
 .career .career-list li figure {
     width: 50rem;
-    min-height: 43.6rem;
+    min-height: 30rem;
 }
 
 .career .career-list li figure img {
@@ -519,7 +541,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000;
+    background: url(../img/ico-plus.svg) no-repeat 50% / cover;
 }
 
 .mcust {
@@ -540,12 +562,13 @@
     align-items: center;
     gap: 4.5rem;
 
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     background: var(--sub-color3) no-repeat 50% / cover;
 
     font-weight: 700;
     font-size: 2.4rem;
     color: #000;
+    transition: 0.4s;
 }
 
 .mcust-list li a {
@@ -564,20 +587,20 @@
 
 .mcust-list li a::before {
     content: "";
-    background: #000;
+    background: no-repeat 50% / contain;
     display: inline-block;
     width: 5rem;
     height: 5rem;
 }
 
-.mcust-list li:hover {
-    background-image: url();
+.mcust-list li a::before {
+    background-image: url(../img/ico-SC1.svg);
 }
 
-.mcust-list li:nth-child(2):hover {
-    background-image: url();
+.mcust-list li:nth-child(2) a::before {
+    background-image: url(../img/ico-SC2.svg);
 }
 
-.mcust-list li:nth-child(3):hover {
-    background-image: url();
+.mcust-list li:nth-child(3) a::before {
+    background-image: url(../img/ico-SC3.svg);
 }
