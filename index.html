@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="./css/common.css" />
         <link rel="stylesheet" href="./css/main.css" />
 
+        <script src="./js/jquery-3.7.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="./js/script.js" defer></script>
     </head>
@@ -18,19 +19,67 @@
         <header id="header">
             <!-- .inner>h1.logo+(nav>ul.gnb+ul.util-menu)+button:button -->
             <div class="inner">
-                <nav>
+                <nav class="gnb">
                     <h1 class="logo">
                         <a href="#"
                             ><figure>
-                                <img src="./img/logo-white.png" alt="중흥그룹" /></figure
-                        ></a>
+                                <img src="./img/logo-white.png" alt="중흥그룹" />
+                                <img src="./img/logo.png" alt="중흥그룹" />
+                            </figure>
+                        </a>
                     </h1>
-                    <ul class="gnb">
-                        <li><a href="#">회사소개</a></li>
-                        <li><a href="#">사업소개</a></li>
-                        <li><a href="#">뉴스센터</a></li>
-                        <li><a href="#">고객센터</a></li>
-                        <li><a href="#">윤리경영</a></li>
+                    <ul class="menu">
+                        <li>
+                            <a href="#"
+                                >회사소개
+                                <ul class="submenu">
+                                    <li><a href="#">비전</a></li>
+                                    <li><a href="#">CEO 인사말</a></li>
+                                    <li><a href="#">회사개요</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">조직도</a></li>
+                                    <li><a href="#">계열사소개</a></li>
+                                    <li><a href="#">찾아오시는 길</a></li>
+                                </ul>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                >사업소개
+                                <ul class="submenu">
+                                    <li><a href="#">토목사업</a></li>
+                                    <li><a href="#">건축사업</a></li>
+                                    <li><a href="#">주택사업</a></li>
+                                    <li><a href="#">도시정비사업</a></li>
+                                    <li><a href="#">도시개발사업</a></li>
+                                    <li><a href="#">스포츠레저사업</a></li>
+                                    <li><a href="#">기타사업</a></li>
+                                </ul>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                >뉴스센터
+                                <ul class="submenu">
+                                    <li><a href="#">중흥뉴스</a></li>
+                                    <li><a href="#">브랜드소개</a></li>
+                                    <li><a href="#">홍보</a></li>
+                                </ul>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                >고객센터
+                                <ul class="submenu">
+                                    <li><a href="#">채용정보</a></li>
+                                    <li><a href="#">건축디자인 공모전</a></li>
+                                    <li><a href="#">협력업체</a></li>
+                                    <li><a href="#">불공정 하도급 신고</a></li>
+                                    <li><a href="#">문의사항</a></li>
+                                </ul>
+                            </a>
+                        </li>
+                        <li><a href="#">윤리경영 </a></li>
                     </ul>
                     <ul class="util-menu">
                         <li>
@@ -42,9 +91,10 @@
                             <label for="btn-shearch"></label>
                         </li>
                     </ul>
-                    <button type="button" class="btn-menu">
-                        <i class="hidden">메뉴</i>
-                    </button>
+                    <div class="tab-menu">
+                        <button type="button" class="btn-menu hidden"></button>
+                        <label for="btn-menu"><i class="hidden">메뉴</i></label>
+                    </div>
                 </nav>
             </div>
         </header>
@@ -81,6 +131,7 @@
                 </div>
                 <div class="visual-title">
                     <h2>新미래를 건설하는 중흥</h2>
+                    <p>40여년의 신뢰를 바탕으로, 더 나은 내일을 짓습니다.</p>
                 </div>
             </section>
             <hr />
@@ -157,7 +208,7 @@
                                 </ul>
                             </div>
                             <div class="business-strong">
-                                <strong>자부심에 명예를 더하는 <br />주거명작 중흥</strong>
+                                <strong>자부심에 명예를 <br />더하는 주거명작</strong>
                             </div>
                         </div>
                         <div class="swiper-slide business-visual">
@@ -167,7 +218,13 @@
                             <div class="business-con">
                                 <dl>
                                     <dt>광주 송정 중흥 S클래스</dt>
-                                    <dd></dd>
+                                    <dd>
+                                        '광주 송정 중흥S-클래스 파크뷰’는 각종 특화설계로 눈길을 끈다. 송정공원을 한
+                                        눈에 바라볼 수 있는 360도 파노라마 영구 조망권(일부세대 제외)을 갖췄다. 단지를
+                                        둘러싼 산책로를 비롯해 이와 연계된 ‘피크닉가든’, ‘힐링가든’, ‘물의 정원’ 등의
+                                        조경도 돋보인다. 또한, 지상에는 차가 다니지 않도록 설계해 안전한 보행공간을
+                                        확보했다.
+                                    </dd>
                                 </dl>
                                 <ul class="business-list">
                                     <li>
@@ -202,10 +259,11 @@
                                 <dl>
                                     <dt>강동 밀레니얼 중흥 S클래스</dt>
                                     <dd>
-                                        수원시 광교 C2블럭 주상복합은 오피스텔, 공동주택, 판매시설로 이루어져 ‘광교의
-                                        별이 되어 특별한 색을 빛내다’(Star Spectrum) 개념으로 프로젝트를 진행 하였다.
-                                        사색공원과 원천호수 그리고 주변 주거 환경을 고려한 스카이라인과 양방향 조망을
-                                        형성하여 새로운 생활과 풍경을 자아낼 수 있도록 계획되었다.
+                                        도보로 접근 가능한 천호역(5·8호선)이 가까운 더블역세권으로 올림픽대로, 강변북로
+                                        등을 타고 GBD(강남비즈니스권역), CBD(광화문비즈니스권역) 등 서울 시내 주요
+                                        지역으로 이동이 빨라 직주근접 여건을 갖췄고
+                                        천호동재정비촉진지구(천호2·3재건축사업, 천호4구역 도시환경정비사업)에서 중심
+                                        역할을 톡톡하며 강동구를 대표하는 신흥주거지로 미래가치 또한 뛰어나다.
                                     </dd>
                                 </dl>
                                 <ul class="business-list">
@@ -230,7 +288,7 @@
                                 </ul>
                             </div>
                             <div class="business-strong">
-                                <strong>새로운 미래를 <br />건설하는 중흥</strong>
+                                <strong>모두를 위한 <br />하나의 이름으로 </strong>
                             </div>
                         </div>
                     </div>
@@ -243,10 +301,18 @@
                 <div class="inner">
                     <h3 class="title">윤리경영</h3>
                     <ul class="ethical-management-list">
-                        <li><a href="#">윤리경영</a></li>
-                        <li><a href="#">장학사업</a></li>
-                        <li><a href="#">협력업체</a></li>
-                        <li><a href="#">아파트A/s</a></li>
+                        <li>
+                            <a href="#"><strong>윤리경영</strong></a>
+                        </li>
+                        <li>
+                            <a href="#"><strong>장학사업</strong></a>
+                        </li>
+                        <li>
+                            <a href="#"><strong>협력업체</strong></a>
+                        </li>
+                        <li>
+                            <a href="#"><strong>아파트A/s</strong></a>
+                        </li>
                     </ul>
                 </div>
             </section>
@@ -364,6 +430,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </section>
             <hr />
@@ -378,13 +445,13 @@
                             <figure>
                                 <img src="./img/career-pic1.jpg" alt="입사지원" />
                             </figure>
-                            <a href="#">바로 지원하기</a>
+                            <a href="#"><p>바로 지원하기</p></a>
                         </li>
                         <li>
                             <figure>
                                 <img src="./img/career-pic2.jpg" alt="채용안내" />
                             </figure>
-                            <a href="#">채용안내 보러가기</a>
+                            <a href="#"><p>채용안내 보러가기</p></a>
                         </li>
                     </ul>
                 </div>
@@ -426,8 +493,12 @@
                 <div class="foot-nav">
                     <div class="foot-adress">
                         <div>
-                            <p>개인정보처리방침</p>
-                            <p>이메일무단수집거부</p>
+                            <a href="#">
+                                <p>개인정보처리방침</p>
+                            </a>
+                            <a href="#">
+                                <p>이메일무단수집거부</p>
+                            </a>
                         </div>
                         <address>
                             <p>광주광역시 북구 무등로(신안동) 204</p>

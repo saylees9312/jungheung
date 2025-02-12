@@ -1,61 +1,106 @@
-const visualSlider = new Swiper(".visual-wrap", {
-    // Optional parameters
-    loop: true,
-    autoplay: true,
-    speed: 3000,
+$(function () {
+    const $window = $(window);
+    const $header = $("#header");
+    const $subMenu = $(".submenu");
+    const $menu = $(".menu > li");
+    const duration = 250;
+    const $visual = $(".visual");
 
-    // If we need pagination
-    pagination: {
-        el: ".swiper-pagination",
-        clickerble: true,
-    },
+    let lastScrollTop = 0;
 
-    // Navigation arrows
-    navigation: {
-        nextEl: ".visual-btn-prev",
-        prevEl: ".visual-btn-next",
-    },
+    $menu.on("mouseenter", function () {
+        $subMenu.stop().slideDown(duration);
+        $(this).addClass("on");
+        $header.addClass("active");
+    });
 
-    // And if we need scrollbar
-    scrollbar: {
-        el: ".swiper-scrollbar",
-    },
-});
+    $menu.on("mouseleave", function () {
+        $subMenu.stop().slideUp(duration);
+        $menu.removeClass("on");
+        $header.removeClass("active");
+    });
 
-const swiper2 = new Swiper(".business-wrap", {
-    loop: true,
-    autoplay: true,
-    speed: 1200,
-    // If we need pagination
-    pagination: {
-        el: ".swiper-pagination",
-    },
+    $window.on("wheel", (e) => {
+        if (e.originalEvent.deltaY < 0) {
+            $header.removeClass("hide");
+            $header.addClass("up");
+        } else {
+            $header.addClass("hide");
+            $header.removeClass("up");
+        }
+    });
 
-    // And if we need scrollbar
-    scrollbar: {
-        el: ".swiper-scrollbar",
-    },
-});
+    $window.on("scroll", (e) => {
+        const scrollTop = $window.scrollTop();
+        if (scrollTop < lastScrollTop) {
+            $header.removeClass("hide");
+            $header.addClass("up");
+        } else {
+            $header.addClass("hide");
+            $header.removeClass("up");
+        }
+        lastScrollTop = scrollTop;
 
-const swiper3 = new Swiper(".news-wrap", {
-    // Optional parameters
-    loop: true,
-    slidesPerView: 4,
-    spaceBetween: 30,
+        if (scrollTop <= $visual.height()) {
+            $header.removeClass("up");
+            $header.addClass("default");
+        } else {
+            $header.removeClass("default");
+        }
+    });
 
-    // If we need pagination
-    pagination: {
-        el: ".swiper-pagination",
-    },
+    const visualSlider = new Swiper(".visual-wrap", {
+        // Optional parameters
+        loop: true,
+        autoplay: true,
+        speed: 3000,
 
-    // Navigation arrows
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+        // If we need pagination
+        pagination: {
+            el: ".swiper-pagination",
+            clickerble: true,
+        },
 
-    // And if we need scrollbar
-    scrollbar: {
-        el: ".swiper-scrollbar",
-    },
+        // Navigation arrows
+        navigation: {
+            nextEl: ".visual-btn-next",
+            prevEl: ".visual-btn-prev",
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: ".swiper-scrollbar",
+        },
+    });
+
+    const swiper2 = new Swiper(".business-wrap", {
+        loop: true,
+        autoplay: {
+            delay: 4000,
+        },
+        speed: 1200,
+        // And if we need scrollbar
+        scrollbar: {
+            el: ".swiper-scrollbar",
+        },
+    });
+
+    const swiper3 = new Swiper(".news-wrap", {
+        // Optional parameters
+        loop: true,
+        slidesPerView: 2,
+        spaceBetween: 30,
+
+        // If we need pagination
+        pagination: {
+            el: ".swiper-pagination",
+            // clickerable: true,
+            clickable: true,
+        },
+        breakpoints: {
+            600: { slidesPerView: 1.5 },
+            800: { slidesPerView: 2.2 },
+            1400: { slidesPerView: 4 },
+        },
+    });
 });

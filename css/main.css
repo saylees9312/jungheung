@@ -2,6 +2,7 @@
 
 .inner {
     width: 140rem;
+    width: 72.9167%;
     margin: 0 auto;
     /* background: rgba(255, 0, 255, 0.2); */
 }
@@ -37,7 +38,7 @@
 }
 
 .visual .visual-wrap figure {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 
@@ -52,11 +53,11 @@
     position: absolute;
     top: 60%;
     transform: translateY(-50%);
-    width: 4rem;
-    height: 4rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 50%;
 
-    background: rgba(0, 0, 0, 0.3) no-repeat 50% / contain;
+    background: rgba(0, 0, 0, 0.3) no-repeat 50% / 22%;
     z-index: 5;
     cursor: pointer;
 }
@@ -72,16 +73,23 @@
 }
 
 .visual .visual-title {
-    font-weight: 400;
-    font-size: 60px;
+    font-weight: 700;
+    font-size: 70px;
     color: #fff;
 
     position: absolute;
     top: 50%;
-    left: 20%;
-    transform: translate(-50%, -20%);
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     z-index: 1;
+}
+
+.visual .visual-title p {
+    font-weight: 500;
+    font-size: 30px;
+    margin-top: 2rem;
+    text-align: center;
 }
 
 .business-classification-list {
@@ -90,7 +98,7 @@
 }
 
 .business-classification-list li {
-    width: 20rem;
+    width: 14.2857%;
     height: 55rem;
     background: no-repeat 50% / cover;
     border-radius: 2.5rem;
@@ -99,7 +107,7 @@
     text-align: center;
     font-weight: 700;
     font-size: 2rem;
-    color: #fff;
+    color: var(--main-color);
     transition: 0.4s;
     position: relative;
     overflow: hidden;
@@ -118,7 +126,7 @@
     background-image: url(../img/business-pic4.jpg);
 }
 .business-classification-list li:nth-child(5) {
-    background-image: url(../img/business-pic5.png);
+    background-image: url(../img/business-pic-5.jpg);
 }
 .business-classification-list li:nth-child(6) {
     background-image: url(../img/business-pic6.jpg);
@@ -137,7 +145,9 @@
 }
 
 .business-classification-list li:hover {
-    width: 36rem;
+    width: 25.7143%;
+    font-size: 2.4rem;
+    color: #fff;
 }
 
 .business-classification-list li:nth-child(1):hover {
@@ -172,7 +182,8 @@
 }
 
 .business .title {
-    margin-left: 26rem;
+    /* margin-left: 26rem; */
+    margin-left: 13.5417%;
 }
 
 .business-wrap {
@@ -195,12 +206,53 @@
     height: 100%;
     border-radius: 0 2.5rem 2.5rem 0;
     overflow: hidden;
+    position: relative;
+}
+
+.business-visual.swiper-slide-active > figure {
+    -webkit-animation: slide-in-left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+    animation: slide-in-left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+}
+
+@-webkit-keyframes slide-in-left {
+    0% {
+        -webkit-transform: translateX(-1000px);
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slide-in-left {
+    0% {
+        -webkit-transform: translateX(-1000px);
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .business-wrap .business-visual > figure img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.business-wrap .business-visual > figure::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
 }
 
 .business-con {
@@ -211,7 +263,7 @@
 }
 
 .business-con dl {
-    padding: 5rem 26rem 0 0;
+    padding: 5rem 13.5416vw 0 0;
     height: calc(70rem - 23rem - (23rem / 2));
 }
 .business-con dl dt {
@@ -229,19 +281,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 13.5417vw;
 }
 
 .business-list li {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width: 20rem;
-    height: 23rem;
+    width: 28.5714%;
+    aspect-ratio: 1/1.1;
     text-align: center;
-}
-
-.business-list li:last-child {
-    margin-right: 26rem;
 }
 
 .business-list li figure {
@@ -249,6 +298,7 @@
     aspect-ratio: 1;
     border-radius: 2.5rem;
     overflow: hidden;
+    position: relative;
 }
 
 .business-list li figure img {
@@ -257,20 +307,22 @@
     object-fit: cover;
 }
 
-.business-strong {
+.business-visual .business-strong {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 80%;
+    left: 20%;
     transform: translate(-50%, -50%);
     z-index: 1;
 
     font-weight: 900;
     font-size: 6rem;
-    color: var(--main-color);
+    color: #fff;
+    opacity: 0;
 }
 
-.ethical-management .title {
-    color: var(--main-color2);
+.business-visual.swiper-slide-active .business-strong {
+    opacity: 1;
+    transition: 0.6s 0.8s;
 }
 
 .ethical-management-list {
@@ -281,8 +333,8 @@
 }
 
 .ethical-management-list li {
-    width: 35rem;
-    height: 55rem;
+    width: 25%;
+    aspect-ratio: 1/1.5714;
     /* border: 1px solid #000; */
     border-radius: 2.5rem;
 
@@ -295,25 +347,19 @@
 
     font-weight: 700;
     font-size: 2.4rem;
-    color: var(--main-color2);
+    color: var(--main-color);
     position: relative;
     overflow: hidden;
 }
 
-.ethical-management-list li a::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: var(--black40p);
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
+.ethical-management-list li strong {
+    z-index: 5;
+    position: relative;
 }
 
 .ethical-management-list li:hover {
     background: no-repeat 50% / cover;
+    filter: drop-shadow(0 0 5px var(--black20p));
 }
 
 .ethical-management-list li:nth-child(1):hover {
@@ -338,23 +384,37 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 5;
 }
 
 .ethical-management-list li:nth-child(1)::before {
-    background-image: url(../img/ico-ethical1.svg);
+    background-image: url(../img/ico-ethical1-1.svg);
 }
 .ethical-management-list li:nth-child(2)::before {
-    background-image: url(../img/ico-ethical2.svg);
+    background-image: url(../img/ico-ethical2-1.svg);
 }
 .ethical-management-list li:nth-child(3)::before {
-    background-image: url(../img/ico-ethical3.svg);
+    background-image: url(../img/ico-ethical3-1.svg);
 }
 .ethical-management-list li:nth-child(4)::before {
-    background-image: url(../img/ico-ethcal4.svg);
+    background-image: url(../img/ico-ethical4-1.svg);
+}
+
+.ethical-management-list li:nth-child(1):hover::before {
+    background-image: url(../img/ico-ethical1-w.svg);
+}
+.ethical-management-list li:nth-child(2):hover::before {
+    background-image: url(../img/ico-ethical2-w.svg);
+}
+.ethical-management-list li:nth-child(3):hover::before {
+    background-image: url(../img/ico-ethical3-w.svg);
+}
+.ethical-management-list li:nth-child(4):hover::before {
+    background-image: url(../img/ico-ethical4-w.svg);
 }
 
 .ethical-management-list li:hover a {
-    color: var(--main-color);
+    color: #fff;
 }
 
 .ethical-management-list li:hover a::before {
@@ -369,19 +429,6 @@
     opacity: 1;
 }
 
-.ethical-management-list li:nth-child(1):hover::before {
-    background-image: url(../img/ico-ethical1-1.svg);
-}
-.ethical-management-list li:nth-child(2):hover::before {
-    background-image: url(../img/ico-ethical2-1.svg);
-}
-.ethical-management-list li:nth-child(3):hover::before {
-    background-image: url(../img/ico-ethical3-1.svg);
-}
-.ethical-management-list li:nth-child(4):hover::before {
-    background-image: url(../img/ico-ethical4-1.svg);
-}
-
 .newsroom {
     background: var(--main-color);
 }
@@ -392,8 +439,8 @@
 
 .newsroom .news-wrap {
     margin-top: 4rem;
-    width: 100vw;
     height: 60rem;
+    overflow-x: hidden;
 }
 
 .news-wraper {
@@ -413,6 +460,8 @@
 }
 
 .news-wrap .new-card {
+    width: 44rem;
+    height: 44rem;
     width: 100%;
     height: 100%;
 
@@ -425,14 +474,39 @@
     color: #fff;
     background: url(../img/54463_67858_5459.png) no-repeat 50% / cover;
     transition: 0.4s;
+    position: relative;
+}
+
+.news-wrap .new-card::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .news-wrap .new-card strong {
+    position: absolute;
+    bottom: 5rem;
+    left: 0;
+    right: auto;
+    display: inline-block;
+    padding: 4rem;
     font-weight: 700;
     font-size: 2.4rem;
 }
 
 .news-wrap .new-card p {
+    position: absolute;
+    bottom: 1.6rem;
+    left: 0;
+    right: auto;
+    display: inline-block;
+
+    padding: 4rem;
     margin-top: 3rem;
     font-size: 1.4rem;
 }
@@ -457,6 +531,11 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 4rem;
 }
 
 .news-wrap .news .news-hov dl dt {
@@ -471,7 +550,22 @@
     font-size: 1.4rem;
 }
 
+.news-wrap .news .news-hov::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
 .news-wrap .news .news-hov a {
+    position: absolute;
+    bottom: 5rem;
+    right: 20rem;
+    left: auto;
+
     margin-top: 5rem;
     border: 1px solid #fff;
     border-radius: 1.5rem;
@@ -479,11 +573,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
 
-    padding: 1.5rem 12rem;
+    padding: 2.4rem 2.4rem;
     font-weight: 500;
     font-size: 1.6rem;
+    transition: 0.4s;
+    text-indent: -999px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.news-wrap .news .news-hov a::after {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background: url(../img/ico-plus-w.svg) no-repeat 50% / cover;
+}
+
+.news-wrap .news .news-hov a:hover {
+    background: #fff;
+    color: var(--main-color);
+}
+
+.news-wrap .news .news-hov a:hover::after {
+    background-image: url(../img/ico-plus.svg);
 }
 
 .news-wrap .news:hover .new-card {
@@ -492,6 +606,30 @@
 
 .news-wrap .news:hover .news-hov {
     display: block;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20vw;
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.swiper-pagination-bullet {
+    width: 2rem;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: var(--main-color-dark);
 }
 
 .career .title + p {
@@ -509,10 +647,11 @@
 .career .career-list li {
     margin-top: 6rem;
     padding: 0 10rem;
+    width: 50%;
 }
 
 .career .career-list li figure {
-    width: 50rem;
+    width: 100%;
     min-height: 30rem;
 }
 
@@ -523,15 +662,19 @@
 }
 
 .career .career-list li a {
-    border-bottom: 2px solid var(--black20p);
     font-weight: 700;
     font-size: 2rem;
-    padding: 3rem 15rem;
+    padding: 3rem 30%;
 
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
+    position: relative;
+}
+
+.career .career-list li a p {
+    color: var(--main-color);
 }
 
 .career .career-list li a::before {
@@ -542,6 +685,37 @@
     justify-content: center;
     align-items: center;
     background: url(../img/ico-plus.svg) no-repeat 50% / cover;
+}
+
+.career .career-list li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--main-color);
+    z-index: 1;
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+.career .career-list li a:hover p {
+    position: relative;
+    z-index: 5;
+    color: #fff;
+}
+
+.career .career-list li a:hover::before {
+    background-image: url(../img/ico-plus-w.svg);
+    position: relative;
+    z-index: 5;
+}
+
+.career .career-list li a:hover::after {
+    border-radius: 2rem;
+    height: 100%;
+    filter: drop-shadow(0 0 5px var(--black20p));
 }
 
 .mcust {
@@ -555,7 +729,7 @@
 }
 
 .mcust-list li {
-    width: 64rem;
+    width: 33.3333%;
 
     display: flex;
     justify-content: center;
@@ -572,16 +746,21 @@
 }
 
 .mcust-list li a {
-    padding: 5rem 15rem;
+    padding: 5rem 23.622%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 4.5rem;
 }
 
+.mcust-list li a p {
+    color: var(--main-color);
+}
+
 .mcust-list li:nth-child(2) {
     background: var(--main-color);
-
+}
+.mcust-list li:nth-child(2) a p {
     color: #fff;
 }
 
@@ -603,4 +782,95 @@
 
 .mcust-list li:nth-child(3) a::before {
     background-image: url(../img/ico-SC3.svg);
+}
+
+/* 여기서부터 반응형 분기점~ */
+
+/* 태블릿 분기점 시작 */
+@media screen and (max-width: 1024px) {
+    .inner {
+        width: 904px;
+    }
+
+    .visual {
+        padding: 0 0 6rem;
+    }
+
+    .visual .visual-title {
+        font-weight: 700;
+        font-size: 5rem;
+    }
+
+    .visual .visual-title p {
+        font-size: 2.4rem;
+    }
+
+    .business-classification-list li {
+        height: 35.5rem;
+    }
+    .business-classification-list li a strong {
+        font-size: 1.8rem;
+    }
+    .business-classification-list li:hover {
+        height: 35.5rem;
+    }
+
+    .business-wrap .business-visual {
+        height: 60rem;
+    }
+
+    .business-visual .business-strong {
+        font-size: 4.8rem;
+    }
+
+    .business-con dl {
+        padding: 5rem 6rem 0 0;
+    }
+    .business-list {
+        margin-top: 4rem;
+        /* margin-right: 6rem; */
+        margin-right: 5.8594%;
+    }
+    .business-list li {
+        flex: 0 1 30%;
+    }
+
+    .business-list li:last-child {
+        margin-right: 0;
+    }
+
+    .ethical-management-list {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .ethical-management-list li {
+        width: 48.6726%;
+        height: 29.2rem;
+    }
+
+    .news-wrap .news .news-hov a {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+    .career .career-list li {
+        padding: 0 2rem;
+    }
+
+    .career .career-list li a {
+        padding: 3rem 10%;
+    }
+
+    .mcust-list li a {
+        padding: 3rem 4rem;
+    }
+    .mcust-list li a p {
+        font-size: 2rem;
+    }
+
+    .mcust-list li a::before {
+        width: 3rem;
+        height: 3rem;
+    }
 }
