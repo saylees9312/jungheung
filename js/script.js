@@ -5,7 +5,6 @@ $(function () {
     const $menu = $(".menu > li");
     const duration = 250;
     const $visual = $(".visual");
-
     let lastScrollTop = 0;
 
     $menu.on("mouseenter", function () {
@@ -75,9 +74,9 @@ $(function () {
 
     const swiper2 = new Swiper(".business-wrap", {
         loop: true,
-        autoplay: {
-            delay: 4000,
-        },
+        // autoplay: {
+        //     delay: 4000,
+        // },
         speed: 1200,
         // And if we need scrollbar
         scrollbar: {
@@ -89,7 +88,7 @@ $(function () {
         // Optional parameters
         loop: true,
         slidesPerView: 2,
-        spaceBetween: 30,
+        spaceBetween: 25,
 
         // If we need pagination
         pagination: {
@@ -98,8 +97,8 @@ $(function () {
             clickable: true,
         },
         breakpoints: {
-            600: { slidesPerView: 1.5 },
-            800: { slidesPerView: 2.2 },
+            600: { slidesPerView: 2.5 },
+            800: { slidesPerView: 3.5 },
             1400: { slidesPerView: 4 },
         },
     });

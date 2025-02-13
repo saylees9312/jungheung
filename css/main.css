@@ -438,8 +438,7 @@
 }
 
 .newsroom .news-wrap {
-    margin-top: 4rem;
-    height: 60rem;
+    padding: 6rem 0;
     overflow-x: hidden;
 }
 
@@ -449,21 +448,19 @@
 }
 
 .news-wrap .news {
-    width: 44rem;
-    height: 44rem;
     background: no-repeat 50% / cover;
 
     border-radius: 2.5rem;
     overflow: hidden;
 
     position: relative;
+    width: 100%;
+    aspect-ratio: 1;
 }
 
 .news-wrap .new-card {
-    width: 44rem;
-    height: 44rem;
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1/1;
 
     display: flex;
     flex-direction: column;
@@ -508,7 +505,7 @@
 
     padding: 4rem;
     margin-top: 3rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 .news-wrap .news-hov {
@@ -517,7 +514,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1;
 
     padding: 6rem 4rem;
     align-items: center;
@@ -540,14 +537,14 @@
 
 .news-wrap .news .news-hov dl dt {
     font-weight: 700;
-    font-size: 2.4rem;
+    font-size: 2.8rem;
 }
 .news-wrap .news .news-hov dl dd {
     font-weight: 500;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
 }
 .news-wrap .news .news-hov dl dd + dd {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 .news-wrap .news .news-hov::before {
@@ -563,8 +560,8 @@
 .news-wrap .news .news-hov a {
     position: absolute;
     bottom: 5rem;
-    right: 20rem;
-    left: auto;
+    right: 50%;
+    transform: translateX(50%);
 
     margin-top: 5rem;
     border: 1px solid #fff;
@@ -574,7 +571,7 @@
     justify-content: center;
     align-items: center;
 
-    padding: 2.4rem 2.4rem;
+    padding: 1.6rem 1.6rem;
     font-weight: 500;
     font-size: 1.6rem;
     transition: 0.4s;
@@ -612,24 +609,23 @@
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-    bottom: 20px;
+    bottom: 0%;
     left: 50%;
     transform: translateX(-50%);
     width: 20vw;
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
     cursor: pointer;
 }
 
 .swiper-pagination-bullet {
-    width: 2rem;
-    height: 2rem;
-    background: rgba(255, 255, 255, 0.5);
+    width: 3rem;
+    height: 3rem;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background: var(--main-color-dark);
+    background: rgba(255, 255, 255, 1);
 }
 
 .career .title + p {
@@ -789,7 +785,7 @@
 /* 태블릿 분기점 시작 */
 @media screen and (max-width: 1024px) {
     .inner {
-        width: 904px;
+        width: 88.2813%;
     }
 
     .visual {
@@ -805,18 +801,49 @@
         font-size: 2.4rem;
     }
 
+    .business-classification-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3rem;
+    }
+
     .business-classification-list li {
-        height: 35.5rem;
+        width: 30.9735%;
+        height: 20rem;
     }
+
+    .business-classification-list li:nth-child(1) {
+        background-image: url(../img/businesspic-1.jpg);
+    }
+    .business-classification-list li:nth-child(2) {
+        background-image: url(../img/business-pic2-1.png);
+    }
+    .business-classification-list li:nth-child(3) {
+        background-image: url(../img/business-pic-3-1.jpg);
+    }
+    .business-classification-list li:nth-child(4) {
+        background-image: url(../img/business-pic-4-1.jpg);
+    }
+    .business-classification-list li:nth-child(5) {
+        background-image: url(../img/business-pic-5-1.jpg);
+    }
+    .business-classification-list li:nth-child(6) {
+        background-image: url(../img/business-pic-6-1.jpg);
+    }
+
+    .business-classification-list li a::before {
+        background-color: rgba(0, 0, 0, 0.2);
+        opacity: 1;
+    }
+
     .business-classification-list li a strong {
+        color: #fff;
         font-size: 1.8rem;
-    }
-    .business-classification-list li:hover {
-        height: 35.5rem;
+        position: relative;
     }
 
     .business-wrap .business-visual {
-        height: 60rem;
+        height: 58.6vw;
     }
 
     .business-visual .business-strong {
@@ -824,12 +851,13 @@
     }
 
     .business-con dl {
-        padding: 5rem 6rem 0 0;
+        padding: 5rem 11.71875% 0 0;
     }
     .business-list {
-        margin-top: 4rem;
+        margin-top: 3rem;
         /* margin-right: 6rem; */
         margin-right: 5.8594%;
+        align-items: start;
     }
     .business-list li {
         flex: 0 1 30%;
@@ -845,10 +873,51 @@
     }
     .ethical-management-list li {
         width: 48.6726%;
-        height: 29.2rem;
+        aspect-ratio: 1/0.5;
+    }
+
+    .news-wrap .news {
+        aspect-ratio: 1;
+    }
+
+    .news .new-card {
+        display: none;
+    }
+
+    .news-wraper {
+        align-items: initial;
+    }
+    .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .news-wrap .news-hov {
+        display: flex;
+        width: 100%;
+        aspect-ratio: 1;
+    }
+
+    .news-wrap .news .news-hov dl {
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .news-wrap .news .news-hov dl dt {
+        font-size: 2rem;
+    }
+
+    .news-wrap .news .news-hov dl dd {
+        font-size: 1.6rem;
+    }
+
+    .news-wrap .news .news-hov dl dd + dd {
+        display: none;
     }
 
     .news-wrap .news .news-hov a {
+        bottom: 1rem;
         left: 50%;
         right: auto;
         transform: translateX(-50%);
@@ -872,5 +941,85 @@
     .mcust-list li a::before {
         width: 3rem;
         height: 3rem;
+    }
+}
+
+/* 여기서 부터 모바일 */
+@media screen and (max-width: 420px) {
+    .inner {
+        width: 36rem;
+    }
+
+    .visual .visual-title h2 {
+        font-weight: 500;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .visual .visual-title p {
+        display: none;
+    }
+
+    .visual .visual-wrap {
+        aspect-ratio: 1/1.2;
+    }
+
+    .business-classification-list li {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .business-wrap .business-visual {
+        flex-direction: column;
+        height: 80rem;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .business-wrap .business-visual > figure {
+        position: static;
+        width: 100%;
+        height: 42rem;
+    }
+
+    .business-visual.swiper-slide-active .business-strong {
+        top: 20%;
+        left: 50%;
+
+        font-weight: 500;
+        font-size: 2.8rem;
+    }
+
+    .business-con {
+        width: 100%;
+        height: 65%;
+        padding: 2rem;
+    }
+
+    .business-con dl {
+        padding: 0;
+    }
+    .business-con dl dt {
+        font-size: 3rem;
+        text-align: center;
+    }
+    .business-con dl dd {
+        font-size: 1.6rem;
+    }
+
+    .business-list {
+        margin-top: 5rem;
+    }
+
+    .ethical-management-list li {
+        width: 36rem;
+        height: 29rem;
+        background: #000 no-repeat 50% / cover;
     }
 }
