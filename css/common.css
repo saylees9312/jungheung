@@ -315,7 +315,8 @@ section {
     justify-content: space-between;
     align-items: center;
 
-    width: 13.7143%;
+    width: 20rem;
+    gap: 2vw;
     height: 5.8rem;
 
     padding: 1rem 0;

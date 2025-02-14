@@ -80,7 +80,7 @@
 }
 .visual .visual-title h2 {
     font-weight: 700;
-    font-size: clamp(3rem, 4.5vw, 7rem);
+    font-size: clamp(3.6rem, 5.5vw, 7rem);
 }
 
 .visual .visual-title p {
@@ -113,6 +113,15 @@
     overflow: hidden;
 }
 
+.business-classification-list li::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(15, 33, 139, 1) 100%);
+    opacity: 0.7;
+}
+
 .business-classification-list li:nth-child(1) {
     background-image: url(../img/business-pic1-1.jpg);
 }
@@ -130,6 +139,16 @@
 }
 .business-classification-list li:nth-child(6) {
     background-image: url(../img/business-pic6.jpg);
+}
+
+.business-classification-list li a {
+    color: #fff;
+
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
 }
 
 .business-classification-list li a::before {
@@ -306,6 +325,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.business-list li p {
+    margin-top: 1.6rem;
 }
 
 .business-visual .business-strong {
@@ -539,11 +562,11 @@
 
 .news-wrap .news .news-hov dl dt {
     font-weight: 700;
-    font-size: 2.8rem;
+    font-size: clamp(1.8rem, 2vw, 2.8rem);
 }
 .news-wrap .news .news-hov dl dd {
     font-weight: 500;
-    font-size: 2.2rem;
+    font-size: clamp(1.6rem, 1.5vw, 2rem);
 }
 .news-wrap .news .news-hov dl dd + dd {
     font-size: 1.6rem;
@@ -561,9 +584,8 @@
 
 .news-wrap .news .news-hov a {
     position: absolute;
-    bottom: 5rem;
-    right: 50%;
-    transform: translateX(50%);
+    bottom: 10%;
+    right: 10%;
 
     margin-top: 5rem;
     border: 1px solid #fff;
@@ -617,12 +639,12 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
-    gap: 3vw;
+    gap: 1vw;
 }
 
 .swiper-pagination-bullet {
-    width: 3rem;
-    height: 3rem;
+    width: clamp(1.5rem, 1.8vw, 2.2rem);
+    height: clamp(1.5rem, 1.8vw, 2.2rem);
 }
 
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
@@ -786,6 +808,20 @@
 }
 
 /* 여기서부터 반응형 분기점~ */
+@media screen and (max-width: 1500px) {
+    .news-wrap .news-hov {
+        padding: 2rem;
+    }
+
+    .news-wrap .news .news-hov dl {
+        padding: 2rem;
+    }
+
+    .news-wrap .news .news-hov a {
+        bottom: 5%;
+        right: 5%;
+    }
+}
 
 /* 태블릿 분기점 시작 */
 @media screen and (max-width: 1024px) {
@@ -798,8 +834,7 @@
     }
 
     .visual .visual-title {
-        font-weight: 700;
-        font-size: 5rem;
+        width: 90%;
     }
 
     .visual .visual-title p {
@@ -932,12 +967,6 @@
 
     .news-wraper {
         align-items: initial;
-    }
-
-    .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
-        width: 3vw;
-        height: 3vw;
     }
 
     .news-wrap .news-hov {
