@@ -7,13 +7,6 @@
     /* background: rgba(255, 0, 255, 0.2); */
 }
 
-.title {
-    font-weight: 900;
-    font-size: 5rem;
-    color: var(--main-color);
-    text-transform: uppercase;
-}
-
 .visual {
     margin: 0 auto;
     position: relative;
@@ -24,7 +17,7 @@
     width: 100%;
 }
 
-.visual .visual-wrap::after {
+.visual .visual-wrap figure::after {
     content: "";
     position: absolute;
     top: 0;
@@ -40,6 +33,8 @@
 .visual .visual-wrap figure {
     width: 100%;
     height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 
 .visual .visual-wrap figure img {
@@ -73,8 +68,6 @@
 }
 
 .visual .visual-title {
-    font-weight: 700;
-    font-size: 70px;
     color: #fff;
 
     position: absolute;
@@ -83,11 +76,16 @@
     transform: translate(-50%, -50%);
 
     z-index: 1;
+    text-align: center;
+}
+.visual .visual-title h2 {
+    font-weight: 700;
+    font-size: clamp(3rem, 4.5vw, 7rem);
 }
 
 .visual .visual-title p {
     font-weight: 500;
-    font-size: 30px;
+    font-size: clamp(1.6rem, 2vw, 3rem);
     margin-top: 2rem;
     text-align: center;
 }
@@ -99,7 +97,9 @@
 
 .business-classification-list li {
     width: 14.2857%;
-    height: 55rem;
+    /* height: 28.6458vw; */
+    height: clamp(36rem, 28vw, 55rem);
+    aspect-ratio: 1/1.528;
     background: no-repeat 50% / cover;
     border-radius: 2.5rem;
 
@@ -183,7 +183,7 @@
 
 .business .title {
     /* margin-left: 26rem; */
-    margin-left: 13.5417%;
+    text-align: center;
 }
 
 .business-wrap {
@@ -257,38 +257,39 @@
 
 .business-con {
     width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .business-con dl {
-    padding: 5rem 13.5416vw 0 0;
+    padding: 5rem 10vw 0 0;
     height: calc(70rem - 23rem - (23rem / 2));
 }
 .business-con dl dt {
     font-weight: 600;
-    font-size: 4rem;
+    font-size: clamp(3rem, 3vw, 4rem);
     color: var(--main-color);
 }
 .business-con dl dd {
     margin-top: 2rem;
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
 }
 
 .business-list {
-    margin-top: 10rem;
+    margin-top: 5rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-right: 13.5417vw;
+    align-items: start;
+    padding-right: 10vw;
 }
 
 .business-list li {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     width: 28.5714%;
+    width: min(28.5714%, 25rem);
     aspect-ratio: 1/1.1;
     text-align: center;
 }
@@ -315,9 +316,10 @@
     z-index: 1;
 
     font-weight: 900;
-    font-size: 6rem;
     color: #fff;
     opacity: 0;
+
+    font-size: clamp(2.8rem, 4vw, 6rem);
 }
 
 .business-visual.swiper-slide-active .business-strong {
@@ -377,9 +379,9 @@
 
 .ethical-management-list li::before {
     content: "";
-    width: 6.6rem;
+    width: clamp(3.6rem, 4vw, 6.6rem);
     aspect-ratio: 1;
-    background: no-repeat 50%;
+    background: no-repeat 50% / contain;
 
     display: flex;
     justify-content: center;
@@ -612,10 +614,10 @@
     bottom: 0%;
     left: 50%;
     transform: translateX(-50%);
-    width: 20vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     cursor: pointer;
+    gap: 3vw;
 }
 
 .swiper-pagination-bullet {
@@ -637,18 +639,18 @@
 .career .career-list {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
 }
 
 .career .career-list li {
     margin-top: 6rem;
-    padding: 0 10rem;
+    padding: 0 3vw;
     width: 50%;
 }
 
 .career .career-list li figure {
     width: 100%;
-    min-height: 30rem;
+    aspect-ratio: 1/0.6;
 }
 
 .career .career-list li figure img {
@@ -660,7 +662,8 @@
 .career .career-list li a {
     font-weight: 700;
     font-size: 2rem;
-    padding: 3rem 30%;
+    width: 100%;
+    padding: 3rem 0;
 
     display: flex;
     justify-content: center;
@@ -742,7 +745,8 @@
 }
 
 .mcust-list li a {
-    padding: 5rem 23.622%;
+    width: 100%;
+    padding: 3rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -751,6 +755,7 @@
 
 .mcust-list li a p {
     color: var(--main-color);
+    font-size: clamp(1.6rem, 2vw, 2.4rem);
 }
 
 .mcust-list li:nth-child(2) {
@@ -846,15 +851,12 @@
         height: 58.6vw;
     }
 
-    .business-visual .business-strong {
-        font-size: 4.8rem;
-    }
-
     .business-con dl {
         padding: 5rem 11.71875% 0 0;
+        height: initial;
     }
     .business-list {
-        margin-top: 3rem;
+        margin-top: 6vw;
         /* margin-right: 6rem; */
         margin-right: 5.8594%;
         align-items: start;
@@ -872,8 +874,52 @@
         gap: 2rem;
     }
     .ethical-management-list li {
-        width: 48.6726%;
+        width: 47.6726%;
         aspect-ratio: 1/0.5;
+        background: no-repeat 50% / cover;
+    }
+
+    .ethical-management-list li:nth-child(1) {
+        background-image: url(../img/ethical-pic1.jpg);
+    }
+    .ethical-management-list li:nth-child(2) {
+        background-image: url(../img/ethical-pic2.jpg);
+    }
+    .ethical-management-list li:nth-child(3) {
+        background-image: url(../img/ethical-pic3.jpg);
+    }
+    .ethical-management-list li:nth-child(4) {
+        background-image: url(../img/ethical-pic4.png);
+    }
+
+    .ethical-management-list li:nth-child(1)::before {
+        background-image: url(../img/ico-ethical1-w.svg);
+    }
+    .ethical-management-list li:nth-child(2)::before {
+        background-image: url(../img/ico-ethical2-w.svg);
+    }
+    .ethical-management-list li:nth-child(3)::before {
+        background-image: url(../img/ico-ethical3-w.svg);
+    }
+    .ethical-management-list li:nth-child(4)::before {
+        background-image: url(../img/ico-ethical4-w.svg);
+    }
+
+    .ethical-management-list li strong {
+        color: #fff;
+        font-size: 1.8rem;
+    }
+
+    .ethical-management-list li a::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: var(--black20p);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 1;
     }
 
     .news-wrap .news {
@@ -887,10 +933,11 @@
     .news-wraper {
         align-items: initial;
     }
+
     .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
     .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
-        width: 2rem;
-        height: 2rem;
+        width: 3vw;
+        height: 3vw;
     }
 
     .news-wrap .news-hov {
@@ -909,7 +956,7 @@
     }
 
     .news-wrap .news .news-hov dl dd {
-        font-size: 1.6rem;
+        display: none;
     }
 
     .news-wrap .news .news-hov dl dd + dd {
@@ -927,15 +974,16 @@
         padding: 0 2rem;
     }
 
+    .career .career-list li figure {
+        min-height: initial;
+    }
+
     .career .career-list li a {
         padding: 3rem 10%;
     }
 
     .mcust-list li a {
-        padding: 3rem 4rem;
-    }
-    .mcust-list li a p {
-        font-size: 2rem;
+        padding: 3rem 0;
     }
 
     .mcust-list li a::before {
@@ -944,20 +992,15 @@
     }
 }
 
-/* 여기서 부터 모바일 */
-@media screen and (max-width: 420px) {
-    .inner {
-        width: 36rem;
-    }
-
-    .visual .visual-title h2 {
-        font-weight: 500;
-        font-size: 3rem;
-        text-align: center;
-    }
-
+/* 추가 분기점 1 */
+@media screen and (max-width: 780px) {
     .visual .visual-title p {
         display: none;
+    }
+
+    .business-con dl {
+        height: inherit;
+        padding: 1rem 11.71875% 0 0;
     }
 
     .visual .visual-wrap {
@@ -966,7 +1009,10 @@
 
     .business-classification-list li {
         width: 10rem;
-        height: 10rem;
+        width: 27.7778%;
+        /* height: 10rem; */
+        height: initial;
+        aspect-ratio: 1;
         border-radius: 50%;
         padding: 0;
         display: flex;
@@ -974,18 +1020,26 @@
         align-items: center;
     }
 
+    .business .title {
+        /* margin-left: 3rem; */
+        margin-left: 7.1429vw;
+    }
+
+    .business-wrap {
+        margin-top: 4rem;
+    }
+
     .business-wrap .business-visual {
         flex-direction: column;
-        height: 80rem;
+        height: 100vh;
         gap: 1rem;
         align-items: center;
         justify-content: center;
     }
 
     .business-wrap .business-visual > figure {
-        position: static;
         width: 100%;
-        height: 42rem;
+        min-height: 30rem;
     }
 
     .business-visual.swiper-slide-active .business-strong {
@@ -993,7 +1047,6 @@
         left: 50%;
 
         font-weight: 500;
-        font-size: 2.8rem;
     }
 
     .business-con {
@@ -1004,6 +1057,7 @@
 
     .business-con dl {
         padding: 0;
+        height: 50%;
     }
     .business-con dl dt {
         font-size: 3rem;
@@ -1014,12 +1068,76 @@
     }
 
     .business-list {
-        margin-top: 5rem;
+        margin: 5rem 0;
+        padding: 0;
+    }
+
+    .career .title + p {
+        font-size: 2.4rem;
+    }
+
+    .career .career-list {
+        flex-direction: column;
+    }
+
+    .career .career-list li {
+        width: 100%;
+        padding: 0;
+    }
+
+    .mcust-list li a {
+        padding: 3rem 2rem;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .ethical-management-list {
+        margin-top: 4rem;
     }
 
     .ethical-management-list li {
-        width: 36rem;
-        height: 29rem;
+        width: 100%;
+        aspect-ratio: 1/0.5;
         background: #000 no-repeat 50% / cover;
+    }
+
+    .ethical-management-list li::before {
+        width: 4rem;
+        aspect-ratio: 1;
+    }
+
+    .mcust-list {
+        flex-direction: column;
+    }
+
+    .mcust-list li {
+        width: 100%;
+        justify-content: start;
+    }
+}
+
+/* 여기서 부터 모바일 */
+@media screen and (max-width: 560px) {
+    .inner {
+        width: 85.7143%;
+    }
+
+    .news-wrap .news .news-hov dl dt {
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+
+    .news-wrap .news .news-hov dl dd {
+        display: none;
+    }
+
+    .news-wrap .news .news-hov a {
+        padding: 0.5rem;
+    }
+
+    .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 }

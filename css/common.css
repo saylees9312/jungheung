@@ -77,6 +77,17 @@ body {
     font: 1.6rem/1.5 "Pretendard", sans-serif;
 }
 
+video,
+img {
+    vertical-align: top;
+}
+.title {
+    font-weight: 900;
+    font-size: clamp(3rem, 4vw, 5rem);
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
 #header {
     width: 100%;
     position: fixed;
@@ -321,8 +332,10 @@ section {
 }
 .foot-nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: end;
+    gap: 3rem;
 }
 
 .foot-adress {
@@ -364,7 +377,7 @@ section {
     display: block;
     width: 6rem;
     height: 6rem;
-    background: no-repeat 50%;
+    background: no-repeat 50% / contain;
 }
 
 .sns-list li:nth-child(1) a::before {
@@ -427,19 +440,79 @@ section {
     .foot-title strong {
         font-size: 4rem;
     }
+}
+
+/* 추가 분기점1 */
+@media screen and (max-width: 800px) {
+    #footer {
+        padding: 8rem 0;
+    }
+
+    .foot-title strong {
+        display: none;
+    }
 
     .foot-title a {
+        margin: 0 auto;
         width: 17rem;
+    }
+
+    .foot-nav {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .foot-adress {
+        margin: 4rem auto;
+    }
+
+    .foot-adress div {
+        justify-content: center;
+        gap: 5vw;
+    }
+
+    .foot-adress address {
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+    .Copyright {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .foot-nav .foot-sns {
+        margin: 2rem auto;
+    }
+
+    .sns-list {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sns-list li a::before {
+        width: 4rem;
+        aspect-ratio: 1;
     }
 }
 
 /* 여기서부터 모바일 분기점 */
 @media screen and (max-width: 420px) {
     .inner {
-        width: 360px;
+        width: 85.7143%;
     }
 
     #header {
-        width: 42rem;
+        /* width: 42rem; */
+        width: 100%;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .title {
+        font-weight: 800;
+        font-size: 3.6rem;
     }
 }

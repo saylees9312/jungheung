@@ -51,8 +51,8 @@ $(function () {
     const visualSlider = new Swiper(".visual-wrap", {
         // Optional parameters
         loop: true,
-        autoplay: true,
-        speed: 3000,
+        // autoplay: true,
+        // speed: 3000,
 
         // If we need pagination
         pagination: {
@@ -100,6 +100,7 @@ $(function () {
             600: { slidesPerView: 2.5 },
             800: { slidesPerView: 3.5 },
             1400: { slidesPerView: 4 },
+            2000: { slidesPerView: 5.5 },
         },
     });
 });
