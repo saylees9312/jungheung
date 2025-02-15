@@ -296,6 +296,74 @@ section {
     padding: 10rem 0;
 }
 
+.mcust {
+    padding-bottom: 0;
+}
+
+.mcust-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mcust-list li {
+    width: 33.3333%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5rem;
+
+    /* border: 1px solid #000; */
+    background: var(--sub-color3) no-repeat 50% / cover;
+
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: #000;
+    transition: 0.4s;
+}
+
+.mcust-list li a {
+    width: 100%;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5rem;
+}
+
+.mcust-list li a p {
+    color: var(--main-color);
+    font-size: clamp(1.6rem, 2vw, 2.4rem);
+}
+
+.mcust-list li:nth-child(2) {
+    background: var(--main-color);
+}
+.mcust-list li:nth-child(2) a p {
+    color: #fff;
+}
+
+.mcust-list li a::before {
+    content: "";
+    background: no-repeat 50% / contain;
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+}
+
+.mcust-list li a::before {
+    background-image: url(../img/ico-SC1.svg);
+}
+
+.mcust-list li:nth-child(2) a::before {
+    background-image: url(../img/ico-SC2.svg);
+}
+
+.mcust-list li:nth-child(3) a::before {
+    background-image: url(../img/ico-SC3.svg);
+}
+
 #footer {
     background: var(--main-color-dark);
     color: #fff;

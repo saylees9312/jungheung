@@ -1,0 +1,296 @@
+@charset 'utf-8';
+
+#header {
+    border-bottom: 2px solid var(--main-color);
+    background-color: #fff;
+}
+
+#header .gnb .menu > li > a {
+    color: var(--main-color);
+}
+
+.gnb .logo figure img {
+    display: none;
+}
+
+.gnb .logo figure img + img {
+    display: block;
+}
+
+.util-menu li:first-child label::before {
+    background-image: url(../img/ico-eng-m.svg);
+}
+
+.util-menu li:last-child label::before {
+    background-image: url(../img/ico-search-m.svg);
+}
+
+.inner {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.bread-crumbs {
+    margin-top: 23rem;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    gap: 2rem;
+}
+
+.bread-crumbs > li {
+    display: flex;
+    gap: 2rem;
+}
+
+.bread-crumbs > li::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    background: #000 no-repeat 50% / contain;
+}
+
+.bread-crumbs > li:last-child::after {
+    display: none;
+}
+
+.bread-crumbs > li:first-child > a::before {
+    content: "";
+    display: block;
+    width: 3.6rem;
+    aspect-ratio: 1;
+    background: #000 no-repeat 50% / contain;
+}
+
+.bread-crumbs > li ul li + li {
+    display: none;
+}
+
+.bread-crumbs > li ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem 2rem;
+    border: 1px solid #000;
+}
+
+.main-visual {
+    padding-top: 0;
+}
+
+.main-visual .head-title {
+    margin-top: 2rem;
+    text-align: center;
+
+    font-size: 8rem;
+}
+
+.menu-list {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu-list li {
+    border: 1px solid var(--black30p);
+    border-radius: 1rem;
+}
+
+.menu-list li a {
+    display: block;
+    padding: 1rem 2rem;
+}
+
+.menu-list li.active {
+    color: #fff;
+    background: var(--main-color);
+    border: none;
+}
+
+.visual-con {
+    background: url(../img/main-visual03.jpg);
+    position: relative;
+
+    margin-top: 13rem;
+    width: 100%;
+    height: 50rem;
+}
+
+.visual-con::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--black50p);
+}
+
+.visual-con p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.visual-con p strong {
+    font-weight: 700;
+    font-size: 4.8rem;
+}
+
+.visual-con p strong b {
+    font-size: 7rem;
+}
+
+.sub-title {
+    text-align: center;
+}
+
+.sub-title h3 {
+    font-weight: 900;
+    font-size: 4.8rem;
+    color: var(--main-color);
+}
+
+.sub-title strong {
+    font-weight: 900;
+    font-size: 4rem;
+    color: #333;
+}
+
+.sub-title strong b {
+    color: var(--main-color);
+}
+
+.sub-title p {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.vision1 figure {
+    width: 60%;
+    aspect-ratio: 1/0.7;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+.vision1 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vision2 {
+    background-color: var(--main-color);
+}
+
+.vision-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20rem;
+}
+
+.vision-con > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.vision-con > li:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.vision-con > li > div {
+    width: 45%;
+}
+
+.vision-con > li > div strong {
+    font-weight: 700;
+    font-size: 4rem;
+    color: #fff;
+}
+
+.business-vision,
+.Management-philosophy {
+    width: 100%;
+}
+
+.vision-list {
+    margin-top: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.vision-list li {
+    width: 18rem;
+    height: 16rem;
+    background: var(--main-color2);
+    border-radius: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+    font-size: 2.2rem;
+    color: #fff;
+}
+
+.vision-list li::before {
+    content: "";
+    width: 4.4rem;
+    height: 4.4rem;
+    background: #000 no-repeat 50% / contain;
+}
+
+.vision-con p {
+    margin-top: 6.8rem;
+    font-weight: 500;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.vision-con > li figure {
+    width: 45%;
+    height: 60rem;
+    border-radius: 2.5rem;
+    overflow: hidden;
+}
+
+.vision-con > li figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Management-philosophy .vision-list li {
+    background-color: var(--main-color-dark);
+}
+
+.promotion .mini-title {
+    font-size: 4.8rem;
+    text-align: center;
+}
+
+.promotion figure {
+    padding-top: 8rem;
+    width: 100rem;
+    aspect-ratio: 16/9;
+    margin: 0 auto;
+}
+
+.promotion figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
