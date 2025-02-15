@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>;
-=======
 $(function () {
     const $window = $(window);
     const $header = $("#header");
@@ -77,9 +74,9 @@ $(function () {
 
     const swiper2 = new Swiper(".business-wrap", {
         loop: true,
-        // autoplay: {
-        //     delay: 4000,
-        // },
+        autoplay: {
+            delay: 4000,
+        },
         speed: 1200,
         // And if we need scrollbar
         scrollbar: {
@@ -107,4 +104,3 @@ $(function () {
         },
     });
 });
->>>>>>> 033b5bc4ff0f2392591aa446976fcac3590a20e1
