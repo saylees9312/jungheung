@@ -1048,10 +1048,6 @@
         width: 100%;
         padding: 0;
     }
-
-    .mcust-list li a {
-        padding: 3rem 2rem;
-    }
 }
 
 @media screen and (max-width: 690px) {
@@ -1068,19 +1064,6 @@
     .ethical-management-list li::before {
         width: 4rem;
         aspect-ratio: 1;
-    }
-
-    .mcust-list {
-        flex-direction: column;
-    }
-
-    .mcust-list li {
-        width: 100%;
-    }
-
-    .mcust-list li a {
-        justify-content: start;
-        padding-left: 8rem;
     }
 }
 

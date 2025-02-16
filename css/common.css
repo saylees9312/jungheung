@@ -78,9 +78,13 @@ body {
 }
 
 video,
+iframe,
 img {
+    width: 100%;
+    height: 100%;
     vertical-align: top;
 }
+
 .title {
     font-weight: 900;
     font-size: clamp(3rem, 4vw, 5rem);
@@ -563,6 +567,25 @@ section {
         width: 4rem;
         aspect-ratio: 1;
     }
+
+    .mcust-list li a {
+        padding: 3rem 2rem;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .mcust-list {
+        flex-direction: column;
+    }
+
+    .mcust-list li {
+        width: 100%;
+    }
+
+    .mcust-list li a {
+        justify-content: start;
+        padding-left: 8rem;
+    }
 }
 
 /* 여기서부터 모바일 분기점 */
@@ -583,5 +606,29 @@ section {
     .title {
         font-weight: 800;
         font-size: 3.6rem;
+    }
+
+    .mcust-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mcust-list li {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4.5rem;
+
+        /* border: 1px solid #000; */
+        background: var(--sub-color3) no-repeat 50% / cover;
+
+        font-weight: 700;
+        font-size: 2.4rem;
+        color: #000;
+        transition: 0.4s;
     }
 }

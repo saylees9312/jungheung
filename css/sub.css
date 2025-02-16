@@ -27,6 +27,7 @@
 
 .inner {
     width: 1400px;
+    width: 72.9167%;
     margin: 0 auto;
 }
 
@@ -34,14 +35,13 @@
     margin-top: 23rem;
     display: flex;
     justify-content: center;
-    align-items: start;
-
-    gap: 2rem;
+    align-items: center;
 }
 
 .bread-crumbs > li {
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: 1rem;
 }
 
 .bread-crumbs > li::after {
@@ -49,7 +49,7 @@
     display: block;
     width: 3rem;
     height: 3rem;
-    background: #000 no-repeat 50% / contain;
+    background: url(../img/ico-nav-arr.svg) no-repeat 50% / contain;
 }
 
 .bread-crumbs > li:last-child::after {
@@ -61,7 +61,7 @@
     display: block;
     width: 3.6rem;
     aspect-ratio: 1;
-    background: #000 no-repeat 50% / contain;
+    background: url(../img/ico-nav-home.svg) no-repeat 50% / contain;
 }
 
 .bread-crumbs > li ul li + li {
@@ -74,7 +74,9 @@
     align-items: center;
 
     padding: 1rem 2rem;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
+
+    font-weight: 600;
 }
 
 .main-visual {
@@ -85,7 +87,7 @@
     margin-top: 2rem;
     text-align: center;
 
-    font-size: 8rem;
+    font-size: clamp(5rem, 6vw, 8rem);
 }
 
 .menu-list {
@@ -102,8 +104,11 @@
 }
 
 .menu-list li a {
-    display: block;
     padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    word-break: keep-all;
 }
 
 .menu-list li.active {
@@ -113,7 +118,7 @@
 }
 
 .visual-con {
-    background: url(../img/main-visual03.jpg);
+    background: url(../img/sub-visual.jpg) no-repeat 50% / cover;
     position: relative;
 
     margin-top: 13rem;
@@ -132,6 +137,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 100%;
+    text-align: center;
     transform: translate(-50%, -50%);
     font-weight: 600;
     font-size: 3rem;
@@ -140,11 +147,11 @@
 
 .visual-con p strong {
     font-weight: 700;
-    font-size: 4.8rem;
+    font-size: clamp(3rem, 4vw, 4.8rem);
 }
 
 .visual-con p strong b {
-    font-size: 7rem;
+    font-size: clamp(4.8rem, 5.5vw, 7rem);
 }
 
 .sub-title {
@@ -153,13 +160,13 @@
 
 .sub-title h3 {
     font-weight: 900;
-    font-size: 4.8rem;
+    font-size: clamp(3rem, 4vw, 4.8rem);
     color: var(--main-color);
 }
 
 .sub-title strong {
     font-weight: 900;
-    font-size: 4rem;
+    font-size: clamp(2.4rem, 3.5vw, 4rem);
     color: #333;
 }
 
@@ -169,17 +176,89 @@
 
 .sub-title p {
     font-weight: 700;
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 2.5vw, 3rem);
 }
 
-.vision1 figure {
-    width: 60%;
-    aspect-ratio: 1/0.7;
-    margin: 0 auto;
+.sub-visual {
+    position: relative;
+}
+
+.sub-visual figure {
+    width: 116rem;
+    width: 82.8571%;
+    aspect-ratio: 1/0.9;
+    margin: 8rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 8rem;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.sub-visual figure::after {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: var(--black30p);
+    backdrop-filter: blur(5px);
+}
+
+.sub-con {
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.sub-con dt {
+    font-weight: 500;
+    font-size: clamp(3rem, 3.5vw, 4.8rem);
+    text-align: center;
+}
+
+.sub-con dd {
+    position: absolute;
+    font-weight: 500;
+    font-size: clamp(1.8rem, 1.8vw, 2.4rem);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.sub-con dd::before {
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+
+.sub-con dd:nth-of-type(1) {
+    top: -160%;
+    left: 15%;
+}
+.sub-con dd:nth-of-type(2) {
+    top: -110%;
+    right: 1%;
+}
+.sub-con dd:nth-of-type(3) {
+    top: 70%;
+    left: -20%;
+}
+.sub-con dd:nth-of-type(4) {
+    top: 120%;
+    right: -15%;
+}
+.sub-con dd:nth-of-type(5) {
+    top: 240%;
+    left: 45%;
+    transform: translateX(-50%);
 }
 
 .vision1 figure img {
@@ -215,7 +294,7 @@
 
 .vision-con > li > div strong {
     font-weight: 700;
-    font-size: 4rem;
+    font-size: clamp(3rem, 3vw, 4rem);
     color: #fff;
 }
 
@@ -232,8 +311,8 @@
 }
 
 .vision-list li {
-    width: 18rem;
-    height: 16rem;
+    width: 28.5714%;
+    aspect-ratio: 1/0.8889;
     background: var(--main-color2);
     border-radius: 2.5rem;
     display: flex;
@@ -248,9 +327,21 @@
 
 .vision-list li::before {
     content: "";
-    width: 4.4rem;
-    height: 4.4rem;
-    background: #000 no-repeat 50% / contain;
+    width: clamp(3rem, 3.2vw, 4.4rem);
+    aspect-ratio: 1;
+    background: no-repeat 50% / contain;
+}
+
+.vision-list li:nth-child(1)::before {
+    background-image: url(../img/ico-sub1-1.svg);
+}
+
+.vision-list li:nth-child(2)::before {
+    background-image: url(../img/ico-sub1-2.svg);
+}
+
+.vision-list li:nth-child(3)::before {
+    background-image: url(../img/ico-sub1-3.svg);
 }
 
 .vision-con p {
@@ -262,7 +353,7 @@
 
 .vision-con > li figure {
     width: 45%;
-    height: 60rem;
+    aspect-ratio: 1/0.9524;
     border-radius: 2.5rem;
     overflow: hidden;
 }
@@ -277,20 +368,152 @@
     background-color: var(--main-color-dark);
 }
 
+.Management-philosophy .vision-list li:nth-child(1)::before {
+    background-image: url(../img/ico-sub2-1.svg);
+}
+
+.Management-philosophy .vision-list li:nth-child(2)::before {
+    background-image: url(../img/ico-sub2-2.svg);
+}
+
+.Management-philosophy .vision-list li:nth-child(3)::before {
+    background-image: url(../img/ico-sub2-3.svg);
+}
+
 .promotion .mini-title {
-    font-size: 4.8rem;
+    font-size: clamp(3rem, 4vw, 4.8rem);
     text-align: center;
 }
 
 .promotion figure {
-    padding-top: 8rem;
-    width: 100rem;
+    width: 71.4286%;
     aspect-ratio: 16/9;
-    margin: 0 auto;
+    margin: 8rem auto;
 }
 
-.promotion figure img {
+.promotion figure iframe {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    border: none;
+}
+
+/* 여기서부터 반응형 분기점 */
+
+@media screen and (max-width: 1400px) {
+    .sub-con dd:nth-of-type(1) {
+        top: -70%;
+    }
+
+    .sub-con dd:nth-of-type(2) {
+        top: -50%;
+    }
+
+    .sub-con dd:nth-of-type(3) {
+        top: 90%;
+    }
+
+    .sub-con dd:nth-of-type(4) {
+        top: 100%;
+    }
+
+    .sub-con dd:nth-of-type(5) {
+        top: 170%;
+    }
+
+    .vision-con > li figure {
+        aspect-ratio: 1/1.4;
+    }
+}
+
+/* 여기서부터 태블릿 */
+@media screen and (max-width: 1024px) {
+    .inner {
+        width: 76.5625%;
+    }
+
+    .gnb .tab-menu label::before {
+        content: "";
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        background: url(../img/ico-tab-menu-m.svg) no-repeat 50% / contain;
+    }
+
+    .vision-con {
+        gap: 13.6719vw;
+    }
+
+    .vision-con > li {
+        flex-direction: column-reverse;
+        gap: 6rem;
+    }
+
+    .vision-con > li > div {
+        width: 100%;
+    }
+
+    .vision-list {
+        margin-top: 4rem;
+    }
+
+    .vision-list li {
+        aspect-ratio: 1/0.8;
+    }
+
+    .vision-con > li figure {
+        width: 100%;
+        aspect-ratio: 1/0.5;
+    }
+
+    .vision-con > li:nth-child(even) {
+        flex-direction: column-reverse;
+        gap: 6rem;
+    }
+
+    .vision-con p {
+        margin-top: 4.8rem;
+    }
+}
+
+/* 추가분기점1 */
+@media screen and (max-width: 800px) {
+    .menu-list {
+        width: 90%;
+        overflow-x: scroll;
+        justify-content: start;
+        margin: 0 auto;
+    }
+
+    .sub-con dd {
+        display: none;
+    }
+}
+
+/* 여기서부터 모바일 */
+@media screen and (max-width: 420px) {
+    .inner {
+        width: 85.7143%;
+    }
+
+    .sub-title strong {
+        margin-top: 1.6rem;
+        font-weight: 700;
+    }
+
+    .sub-title p {
+        font-weight: 400;
+    }
+
+    .vision-list li {
+        aspect-ratio: 1/0.5;
+    }
+
+    .vision-list li::before {
+        display: none;
+    }
+
+    .promotion figure {
+        width: 100%;
+        margin: 5rem 0;
+    }
 }
