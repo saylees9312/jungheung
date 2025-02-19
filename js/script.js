@@ -7,6 +7,11 @@ $(function () {
     const $visual = $(".visual");
     let lastScrollTop = 0;
 
+    const $btnHam = $(".hamburger-menu label");
+    const $hamburger = $(".hamburger-menu");
+    const $mobMenu = $(".mobmenu");
+    const $mobSub = $(".mobmenu .submenu");
+
     $menu.on("mouseenter", function () {
         $subMenu.stop().slideDown(duration);
         $(this).addClass("on");
@@ -46,6 +51,18 @@ $(function () {
         } else {
             $header.removeClass("default");
         }
+    });
+
+    $btnHam.on("click", function () {
+        $hamburger.toggleClass("on");
+    });
+
+    $mobMenu.find("li").on("click", function () {
+        $(this).find($mobSub).stop().slideToggle();
+        $(this).toggleClass("active");
+        $(this).siblings().removeClass("active");
+        $(this).siblings().find($mobSub).stop().slideUp(duration);
+        $(this).find().preventdefault();
     });
 
     const visualSlider = new Swiper(".visual-wrap", {
@@ -102,5 +119,31 @@ $(function () {
             1400: { slidesPerView: 4 },
             2000: { slidesPerView: 5.5 },
         },
+    });
+
+    //2.디자인 커스텀
+    const $select = $(".select-wrap > strong");
+    const $selectList = $(".select-list");
+
+    $select.on("click", function () {
+        $selectList.slideToggle();
+        $(this).toggleClass("active");
+    });
+
+    $selectList.find("li").on("click", function () {
+        //data-link 속성의 값을 가져와서
+        //속성 값을 가져오는 메서드 : attr(속성이름)
+        //특정 속성에 값을 적용할 때 : attr(속성이름, 값)
+
+        // const link = $(this).attr("data-link");
+
+        // data- : 사용자 속성을 다루는 메서드 : data(속성이름,값)
+        const link = $(this).data("link");
+        //브라우저 새 창(탭)열기
+        window.open(link);
+
+        //원상복구
+        $selectList.slideUp();
+        $select.removeClass("active");
     });
 });

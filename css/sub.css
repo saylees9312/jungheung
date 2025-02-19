@@ -32,48 +32,140 @@
 }
 
 .bread-crumbs {
-    margin-top: 23rem;
+    margin: 23rem auto 0;
     display: flex;
     justify-content: center;
+    gap: 1rem;
     align-items: center;
+    height: 10rem;
+    /* background: #ff5; */
 }
 
-.bread-crumbs > li {
+.bread-crumbs > div:nth-child(1) {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 1rem;
+    top: 0;
+    left: 0;
+    padding: 2rem;
 }
 
-.bread-crumbs > li::after {
+.bread-crumbs > div:first-child > a::before {
     content: "";
     display: block;
-    width: 3rem;
-    height: 3rem;
-    background: url(../img/ico-nav-arr.svg) no-repeat 50% / contain;
-}
-
-.bread-crumbs > li:last-child::after {
-    display: none;
-}
-
-.bread-crumbs > li:first-child > a::before {
-    content: "";
-    display: block;
-    width: 3.6rem;
+    width: 2.4rem;
     aspect-ratio: 1;
     background: url(../img/ico-nav-home.svg) no-repeat 50% / contain;
 }
 
-.bread-crumbs > li ul li + li {
+.crumbs-main {
+    position: relative;
+    border: #f5f;
+    z-index: 1;
+}
+
+.crumbs-main strong {
+    display: flex;
+    padding: 2rem 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.crumbs-main strong::after {
+    content: "";
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border: solid #666;
+    border-width: 2px 2px 0 0;
+    transform: rotate(135deg);
+    flex: 1 0 10%;
+}
+
+.main-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* border: 1px solid red; */
     display: none;
 }
 
-.bread-crumbs > li ul li a {
+.main-menu li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #f5f5f5;
+    border-bottom: 1px solid var(--black30p);
+}
+
+.main-menu li:last-child {
+    border: none;
+}
+
+.crumbs-sub {
+    width: 15rem;
+    position: relative;
+    border: #f5f;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crumbs-sub strong {
+    display: flex;
+    padding: 2rem 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.crumbs-sub strong::after {
+    content: "";
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border: solid #666;
+    border-width: 2px 2px 0 0;
+    transform: rotate(135deg);
+    flex: 1 0 10%;
+}
+
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* border: 1px solid red; */
+    display: none;
+}
+
+.sub-menu li {
+    width: 15rem;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 1rem 2rem;
+    background: #f5f5f5;
+    border-bottom: 1px solid var(--black30p);
+}
+
+.sub-menu li:last-child {
+    border: none;
+}
+
+.bread-crumbs > div ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem 3rem;
     /* border: 1px solid #000; */
 
     font-weight: 600;
@@ -186,7 +278,7 @@
 .sub-visual figure {
     width: 116rem;
     width: 82.8571%;
-    aspect-ratio: 1/0.9;
+    aspect-ratio: 1;
     margin: 8rem auto;
     display: flex;
     justify-content: center;
@@ -206,24 +298,27 @@
 }
 
 .sub-con {
-    text-transform: uppercase;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    inset: 0;
     color: #fff;
 }
 
 .sub-con dt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-weight: 500;
     font-size: clamp(3rem, 3.5vw, 4.8rem);
     text-align: center;
+    z-index: 1;
 }
 
 .sub-con dd {
     position: absolute;
     font-weight: 500;
-    font-size: clamp(1.8rem, 1.8vw, 2.4rem);
+    font-size: clamp(1.4rem, 1.6vw, 2rem);
 
     display: flex;
     justify-content: center;
@@ -240,23 +335,23 @@
 }
 
 .sub-con dd:nth-of-type(1) {
-    top: -160%;
+    top: 30%;
     left: 15%;
 }
 .sub-con dd:nth-of-type(2) {
-    top: -110%;
-    right: 1%;
+    top: 40%;
+    right: 10%;
 }
 .sub-con dd:nth-of-type(3) {
-    top: 70%;
-    left: -20%;
+    top: 65%;
+    left: 20%;
 }
 .sub-con dd:nth-of-type(4) {
-    top: 120%;
-    right: -15%;
+    top: 70%;
+    right: 15%;
 }
 .sub-con dd:nth-of-type(5) {
-    top: 240%;
+    top: 80%;
     left: 45%;
     transform: translateX(-50%);
 }
@@ -313,21 +408,21 @@
 .vision-list li {
     width: 28.5714%;
     aspect-ratio: 1/0.8889;
-    background: var(--main-color2);
+    background: var(--main-color-light);
     border-radius: 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
     font-weight: 500;
-    font-size: 2.2rem;
+    font-size: clamp(1.6rem, 1.8vw, 2.2rem);
     color: #fff;
+    gap: 0.5rem;
 }
 
 .vision-list li::before {
     content: "";
-    width: clamp(3rem, 3.2vw, 4.4rem);
+    width: clamp(1.6rem, 3vw, 4.4rem);
     aspect-ratio: 1;
     background: no-repeat 50% / contain;
 }
@@ -400,26 +495,6 @@
 /* 여기서부터 반응형 분기점 */
 
 @media screen and (max-width: 1400px) {
-    .sub-con dd:nth-of-type(1) {
-        top: -70%;
-    }
-
-    .sub-con dd:nth-of-type(2) {
-        top: -50%;
-    }
-
-    .sub-con dd:nth-of-type(3) {
-        top: 90%;
-    }
-
-    .sub-con dd:nth-of-type(4) {
-        top: 100%;
-    }
-
-    .sub-con dd:nth-of-type(5) {
-        top: 170%;
-    }
-
     .vision-con > li figure {
         aspect-ratio: 1/1.4;
     }
@@ -434,8 +509,8 @@
     .gnb .tab-menu label::before {
         content: "";
         display: block;
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
         background: url(../img/ico-tab-menu-m.svg) no-repeat 50% / contain;
     }
 
@@ -458,6 +533,7 @@
 
     .vision-list li {
         aspect-ratio: 1/0.8;
+        font-size: clamp(1.4rem, 2.2vw, 2.4rem);
     }
 
     .vision-con > li figure {
@@ -472,6 +548,7 @@
 
     .vision-con p {
         margin-top: 4.8rem;
+        font-size: clamp(1.6rem, 1.8vw, 2rem);
     }
 }
 
@@ -481,7 +558,7 @@
         width: 90%;
         overflow-x: scroll;
         justify-content: start;
-        margin: 0 auto;
+        margin: 2rem auto 0;
     }
 
     .sub-con dd {
@@ -506,10 +583,8 @@
 
     .vision-list li {
         aspect-ratio: 1/0.5;
-    }
-
-    .vision-list li::before {
-        display: none;
+        gap: 0.5rem;
+        padding: 1rem 0;
     }
 
     .promotion figure {

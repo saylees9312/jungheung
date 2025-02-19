@@ -214,8 +214,7 @@
 }
 
 .business-visual.swiper-slide-active > figure {
-    -webkit-animation: slide-in-left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-        0.5s both;
+    -webkit-animation: slide-in-left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
     animation: slide-in-left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
 }
 
@@ -257,11 +256,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.8) 0%,
-        rgba(0, 0, 0, 0) 50%
-    );
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
 }
 
 .business-con {
@@ -368,7 +363,7 @@
 }
 
 .ethical-management-list li strong {
-    z-index: 5;
+    z-index: 1;
     position: relative;
 }
 
@@ -399,7 +394,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 5;
+    z-index: 1;
 }
 
 .ethical-management-list li:nth-child(1)::before {
@@ -639,8 +634,7 @@
 }
 
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets
-    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background: rgba(255, 255, 255, 1);
 }
 
@@ -935,15 +929,6 @@
     .career .career-list li a {
         padding: 3rem 10%;
     }
-
-    .mcust-list li a {
-        padding: 3rem 0;
-    }
-
-    .mcust-list li a::before {
-        width: 3rem;
-        height: 3rem;
-    }
 }
 
 /* 추가 분기점 1 */
@@ -1087,8 +1072,7 @@
     }
 
     .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-    .swiper-pagination-horizontal.swiper-pagination-bullets
-        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
         width: 1.5rem;
         height: 1.5rem;
     }
