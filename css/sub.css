@@ -190,12 +190,12 @@
     gap: 1.5rem;
 }
 
-.menu-list li {
+.main-visual .menu-list li {
     border: 1px solid var(--black30p);
     border-radius: 1rem;
 }
 
-.menu-list li a {
+.main-visual .menu-list li a {
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -203,7 +203,7 @@
     word-break: keep-all;
 }
 
-.menu-list li.active {
+.main-visual .menu-list li.active {
     color: #fff;
     background: var(--main-color);
     border: none;
@@ -363,6 +363,7 @@
 }
 
 .vision2 {
+    padding: 12rem 0;
     background-color: var(--main-color);
 }
 

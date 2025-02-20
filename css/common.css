@@ -111,10 +111,6 @@ img {
     background: #fff;
 }
 
-#header.default {
-    background: transparent;
-}
-
 #header::after {
     content: "";
     display: block;
@@ -144,10 +140,6 @@ img {
 
 #header.up .gnb li a {
     color: var(--main-color);
-}
-
-#header.default .gnb li a {
-    color: #fff;
 }
 
 .gnb .logo figure {
@@ -180,30 +172,12 @@ img {
 #header.up .gnb .logo figure img + img {
     display: block;
 }
-#header.default .gnb .logo figure img {
+
+.hamburger-menu {
     display: none;
 }
 
-#header.default .gnb .logo figure img {
-    display: block;
-}
-
-#header.default .gnb .logo figure img + img {
-    display: none;
-}
-
-#header.default.active .gnb .logo figure img {
-    display: none;
-}
-#header.default.active .gnb .logo figure img + img {
-    display: block;
-}
-
-.gnb .hamburger-menu {
-    display: none;
-}
-
-.gnb .hamburger-menu label::before {
+.hamburger-menu label::before {
     content: "";
     display: block;
     width: 2.5rem;
@@ -253,10 +227,6 @@ img {
     padding: 1rem 0;
 }
 
-#header.default .menu .submenu li a {
-    color: var(--main-color-dark);
-}
-
 .util-menu {
     display: flex;
     gap: 1.6rem;
@@ -292,19 +262,19 @@ img {
     background-image: url(../img/ico-search-m.svg);
 }
 
-#header.default .util-menu li:first-child label::before {
-    background-image: url(../img/ico-eng.svg);
-}
-#header.default .util-menu li:last-child label::before {
-    background-image: url(../img/ico-search.svg);
-}
-
-#header.default .mobmenu {
-    background: #fff;
-    color: var(--main-color);
+#header .hamburger-menu label {
+    position: fixed;
+    top: 4rem;
+    right: 4rem;
+    z-index: 20;
+    transition: 0.4s 0.4s;
 }
 
 #header.hide .mobmenu {
+    display: none;
+}
+
+#header.hide label {
     display: none;
 }
 
@@ -320,12 +290,12 @@ img {
 }
 
 .mobmenu {
-    position: absolute;
-    top: 10rem;
+    position: fixed;
+    top: 0;
     right: -300%;
     width: 100%;
-    min-height: 50%;
-    padding: 5vw;
+    height: 100%;
+    padding: 10vw;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -337,8 +307,13 @@ img {
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
 }
 
+.hamburger-menu.on label::before {
+    background-image: url(../img/ico-hammenu-close.svg);
+    transition: 0.4s 0.4s;
+}
+
 .hamburger-menu.on .mobmenu {
-    right: -20%;
+    right: 0;
 }
 
 .mobmenu .menu-list {
@@ -352,7 +327,7 @@ img {
     display: block;
     padding: 2rem 4rem;
     font-weight: 700;
-    font-size: 2.2rem;
+    font-size: 3.2rem;
     color: var(--main-color);
 }
 
@@ -366,14 +341,18 @@ img {
 
 .mobmenu .menu-list .submenu {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 5vw;
+
+    width: 80%;
+    flex-direction: row;
+    justify-content: start;
     align-items: start;
 
-    position: relative;
-    top: 100%;
-    left: 25%;
-    display: none;
+    /* position: relative; */
+    top: 0;
+    left: 0;
+    /* display: none; */
 }
 
 .mobmenu .menu-list .submenu li a {
@@ -383,8 +362,8 @@ img {
     font-size: 1.8rem;
 }
 
-.mobmenu .menu-list .submenu section {
-    padding: 10rem 0;
+section {
+    padding: 12rem 0;
 }
 
 .mcust {
@@ -636,7 +615,6 @@ img {
 
     #header .gnb .hamburger-menu {
         display: block;
-        z-index: 15;
     }
 
     #header.up .gnb .menu {
@@ -648,16 +626,12 @@ img {
     #header.up .gnb .hamburger-menu {
         display: block;
     }
-    #header.up .gnb .hamburger-menu label::before {
+    #header.up .hamburger-menu label::before {
         background-image: url(../img/ico-tab-menu-m.svg);
     }
 
-    #header.default .gnb li a {
-        color: var(--main-color);
-    }
-
-    #header.default .gnb .submenu a {
-        color: var(--main-color-dark);
+    #header.up .hamburger-menu.on label::before {
+        background-image: url(../img/ico-hammenu-close.svg);
     }
 
     section {
@@ -753,6 +727,12 @@ img {
 }
 
 @media screen and (max-width: 690px) {
+    .mobmenu .menu-list .submenu {
+        flex-direction: column;
+        position: relative;
+        display: none;
+    }
+
     .mcust-list {
         flex-direction: column;
     }

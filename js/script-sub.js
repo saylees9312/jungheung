@@ -10,6 +10,11 @@ $(function () {
     const $menuSelect = $(".main-menu");
     const $subSelect = $(".sub-menu");
 
+    const $btnHam = $(".hamburger-menu label");
+    const $hamburger = $(".hamburger-menu");
+    const $mobMenu = $(".mobmenu");
+    const $mobSub = $(".mobmenu .submenu");
+
     $menu.on("mouseenter", function () {
         $subMenu.stop().slideDown(duration);
         $(this).addClass("on");
@@ -31,6 +36,19 @@ $(function () {
             $header.removeClass("up");
         }
     });
+
+    $btnHam.on("click", function () {
+        $hamburger.toggleClass("on");
+    });
+
+    $mobMenu.find("li").on("click", function () {
+        $(this).find($mobSub).stop().slideToggle();
+        $(this).toggleClass("active");
+        $(this).siblings().removeClass("active");
+        $(this).siblings().find($mobSub).stop().slideUp(duration);
+        $(this).find().preventdefault();
+    });
+
     $mainCrumbs.on("click", function () {
         $menuSelect.slideToggle();
     });

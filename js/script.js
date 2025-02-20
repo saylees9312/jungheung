@@ -45,11 +45,9 @@ $(function () {
         }
         lastScrollTop = scrollTop;
 
-        if (scrollTop <= $visual.height()) {
+        if (scrollTop < $visual.height()) {
             $header.removeClass("up");
-            $header.addClass("default");
-        } else {
-            $header.removeClass("default");
+            $header.addClass("");
         }
     });
 
