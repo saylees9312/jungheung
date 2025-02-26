@@ -65,26 +65,15 @@ $(function () {
     const visualSlider = new Swiper(".visual-wrap", {
         // Optional parameters
         loop: true,
-        autoplay: true,
+        autoplay: { delay: 3000 },
         speed: 3000,
-
-        // If we need pagination
-        pagination: {
-            el: ".swiper-pagination",
-            clickerble: true,
-        },
-
         // Navigation arrows
         navigation: {
-            nextEl: ".visual-btn-next",
-            prevEl: ".visual-btn-prev",
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-            el: ".swiper-scrollbar",
+            nextEl: document.querySelector(".visual-wrap.swbtn-next"),
+            prevEl: document.querySelector(".visual-wrap.swbtn-prev"),
         },
     });
+    console.log(visualSlider, document.querySelector(".swbtn-next"));
 
     const swiper2 = new Swiper(".business-wrap", {
         loop: true,

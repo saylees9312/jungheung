@@ -325,9 +325,9 @@ img {
 
 .mobmenu .menu-list > li > a {
     display: block;
-    padding: 2rem 4rem;
+    padding: 2rem 0;
     font-weight: 700;
-    font-size: 3.2rem;
+    font-size: max(4rem, 5.5vw);
     color: var(--main-color);
 }
 
@@ -335,14 +335,10 @@ img {
     position: relative;
 }
 
-.mobmenu .menu-list > li.active {
-    border-bottom: 2px solid var(--main-color-dark);
-}
-
 .mobmenu .menu-list .submenu {
     display: flex;
     flex-direction: column;
-    padding: 0 5vw;
+    padding: 0;
 
     justify-content: start;
     align-items: start;
@@ -355,9 +351,10 @@ img {
 
 .mobmenu .menu-list .submenu li a {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 1rem 0;
     font-weight: 600;
-    font-size: 1.8rem;
+    font-size: max(2.2rem, 2.8vw);
+    color: var(--main-color-dark);
 }
 
 section {
@@ -514,16 +511,17 @@ section {
 }
 
 .select-list li {
-    padding: 2rem;
+    padding: 1rem;
     border-bottom: 1px solid var(--main-color-dark);
     cursor: pointer;
-    background: #eee;
-    color: var(--main-color);
+    background: var(--main-color);
+    color: #fff;
     font-weight: 500;
+    font-size: 2rem;
 }
 
 .select-list li:hover {
-    background: #ccc;
+    background: var(--main-color-light);
 }
 
 .foot-nav {
@@ -731,6 +729,13 @@ section {
 }
 
 @media screen and (max-width: 690px) {
+    .mobmenu .menu-list {
+        margin-left: 4rem;
+    }
+    .mobmenu .menu-list > li > a {
+        padding: 1.5rem 0;
+    }
+
     .mobmenu .menu-list .submenu {
         flex-direction: column;
         position: relative;

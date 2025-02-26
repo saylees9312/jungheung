@@ -96,12 +96,19 @@ $(function () {
 
     // vision1 영역 마우스 이동에 따른 dd 애니메이션
     $document.on("mousemove", function (e) {
-        const moveX = (e.pageX - $window.width() / 2) * 0.16;
-        const moveY = (e.pageY - $window.height() / 2) * 0.16;
+        const moveX = (e.pageX - $window.width() / 2) * 0.3;
+        const moveY = (e.pageY - $window.height() / 2) * 0.3;
 
         $visionItems.each(function (index) {
             const speed = (index + 1) * 2; // 개별 요소 속도 차이 적용
             $(this).css("transform", `translate(${moveX / speed}px, ${moveY / speed}px)`);
         });
     });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const mainText = document.querySelector(".sub-title h3");
+    // 글자자르기
+    const text = new SplitType(mainText, { types: "words" });
+    gsap.from(text.words, { opacity: 0, x: 200, filter: "blur(5px)", duration: 1, stagger: 0.5 });
 });

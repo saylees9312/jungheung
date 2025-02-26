@@ -43,7 +43,7 @@
     object-fit: cover;
 }
 
-.visual-btn {
+.visual-wrap .visual-btn {
     position: absolute;
     top: 60%;
     transform: translateY(-50%);
@@ -52,16 +52,16 @@
     border-radius: 50%;
 
     background: rgba(0, 0, 0, 0.3) no-repeat 50% / 22%;
-    z-index: 5;
+    z-index: 10;
     cursor: pointer;
 }
 
-.visual-btn-prev {
+.visual-wrap .visual-btn-prev {
     left: 2vw;
     background-image: url(../img/btn-ico-prev.svg);
 }
 
-.visual-btn-next {
+.visual-wrap .visual-btn-next {
     right: 2vw;
     background-image: url(../img/btn-ico-next.svg);
 }
@@ -136,7 +136,8 @@
     content: "";
     width: 100%;
     height: 100%;
-    background: var(--black40p);
+    background: var(--main-color);
+    opacity: 0.3;
 
     position: absolute;
     top: 0;
@@ -479,9 +480,28 @@
 
     padding: 4rem;
     color: #fff;
-    background: url(../img/54463_67858_5459.png) no-repeat 50% / cover;
+    background: no-repeat 50% / cover;
     transition: 0.4s;
     position: relative;
+}
+
+.news-wraper .news1 .new-card {
+    background-image: url(../img/54463_67858_5459.png);
+}
+.news-wraper .news2 .new-card {
+    background-image: url(../img/news-pic1.jpg);
+}
+.news-wraper .news3 .new-card {
+    background-image: url(../img/news-pic2.jpg);
+}
+.news-wraper .news4 .new-card {
+    background-image: url(../img/news-pic3.jpg);
+}
+.news-wraper .news5 .new-card {
+    background-image: url(../img/news-pic4.jpg);
+}
+.news-wraper .news6 .new-card {
+    background-image: url(../img/news-pic5.jpg);
 }
 
 .news-wrap .new-card::before {
@@ -529,9 +549,28 @@
     padding: 6rem 4rem;
     align-items: center;
 
-    background: url(../img/352755_250741_652.png) no-repeat 50% / cover;
+    background: no-repeat 50% / cover;
 
     color: #fff;
+}
+
+.news-wraper .news1 .news-hov {
+    background-image: url(../img/352755_250741_652.png);
+}
+.news-wraper .news2 .news-hov {
+    background-image: url(../img/news-pic1-2.jpg);
+}
+.news-wraper .news3 .news-hov {
+    background-image: url(../img/news-pic2-2.png);
+}
+.news-wraper .news4 .news-hov {
+    background-image: url(../img/news-pic4-2.jpg);
+}
+.news-wraper .news5 .news-hov {
+    background-image: url(../img/news-pic5-2.jpg);
+}
+.news-wraper .news6 .news-hov {
+    background-image: url(../img/news-pic6.jpg);
 }
 
 .news-wrap .news .news-hov dl {
@@ -720,7 +759,6 @@
 }
 
 .career .career-list li a:hover::after {
-    border-radius: 2rem;
     height: 100%;
     filter: drop-shadow(0 0 5px var(--black20p));
 }
