@@ -9,6 +9,7 @@ $(function () {
     const $subCrumbs = $(".crumbs-sub > strong");
     const $menuSelect = $(".main-menu");
     const $subSelect = $(".sub-menu");
+    let lastScrollTop = 0;
 
     const $btnHam = $(".hamburger-menu label");
     const $hamburger = $(".hamburger-menu");
@@ -16,59 +17,81 @@ $(function () {
     const $mobSub = $(".mobmenu .submenu");
     const $visionItems = $(".vision1 dd");
 
-    $menu.on("mouseenter", function () {
-        $subMenu.stop().slideDown(duration);
-        $(this).addClass("on");
-        $header.addClass("active");
-    });
+    function setMenuBehavior() {
+        const windowWidth = $window.width();
 
-    $menu.on("mouseleave", function () {
-        $subMenu.stop().slideUp(duration);
-        $menu.removeClass("on");
-        $header.removeClass("active");
-    });
+        if (windowWidth > 1024) {
+            $menu.off("click").on("mouseenter", function () {
+                $subMenu.stop().slideDown(duration);
+                $(this).addClass("on");
+                $header.addClass("active");
+            });
 
-    $window.on("wheel", (e) => {
-        if (e.originalEvent.deltaY < 0) {
-            $header.removeClass("hide");
-            $header.addClass("up");
+            $menu.on("mouseleave", function () {
+                $subMenu.stop().slideUp(duration);
+                $menu.removeClass("on");
+                $header.removeClass("active");
+            });
+        } else if (windowWidth > 690) {
+            $menu.off("mouseenter mouseleave click");
+            $subMenu.show().css({ display: "flex", "flex-direction": "row" });
         } else {
-            $header.addClass("hide");
-            $header.removeClass("up");
+            $menu.off("mouseenter mouseleave").on("click", function (e) {
+                e.preventDefault();
+                $(this).find(".submenu").stop().slideToggle();
+                $(this).toggleClass("active").siblings().removeClass("active");
+                $(this).siblings().find(".submenu").stop().slideUp();
+            });
         }
+    }
+
+    setMenuBehavior();
+    $window.on("resize", setMenuBehavior);
+
+    $window.on("scroll", () => {
+        const scrollTop = $window.scrollTop();
+        if (!$hamburger.hasClass("on")) {
+            if (scrollTop < lastScrollTop) {
+                $header.removeClass("hide").addClass("up");
+            } else {
+                $header.addClass("hide").removeClass("up");
+            }
+        }
+        lastScrollTop = scrollTop;
     });
 
     $btnHam.on("click", function () {
         $hamburger.toggleClass("on");
     });
 
-    $mobMenu.find("li").on("click", function () {
+    $mobMenu.find("li").on("click", function (e) {
+        e.preventDefault();
         $(this).find($mobSub).stop().slideToggle();
         $(this).toggleClass("active");
         $(this).siblings().removeClass("active");
         $(this).siblings().find($mobSub).stop().slideUp(duration);
-        $(this).find().preventdefault();
     });
 
     $mainCrumbs.on("click", function () {
         $menuSelect.slideToggle();
     });
+
     $menuSelect.find("li").on("click", function () {
-        const $selestText = $(this).text();
-        $mainCrumbs.text($selestText);
+        const selectedText = $(this).text();
+        $mainCrumbs.text(selectedText);
         $menuSelect.slideUp();
     });
 
     $subCrumbs.on("click", function () {
         $subSelect.slideToggle();
     });
+
     $subSelect.find("li").on("click", function () {
-        const $selestText = $(this).text();
-        $subCrumbs.text($selestText);
+        const selectedText = $(this).text();
+        $subCrumbs.text(selectedText);
         $subSelect.slideUp();
     });
 
-    //2.디자인 커스텀
     const $select = $(".select-wrap > strong");
     const $selectList = $(".select-list");
 
@@ -78,18 +101,8 @@ $(function () {
     });
 
     $selectList.find("li").on("click", function () {
-        //data-link 속성의 값을 가져와서
-        //속성 값을 가져오는 메서드 : attr(속성이름)
-        //특정 속성에 값을 적용할 때 : attr(속성이름, 값)
-
-        // const link = $(this).attr("data-link");
-
-        // data- : 사용자 속성을 다루는 메서드 : data(속성이름,값)
         const link = $(this).data("link");
-        //브라우저 새 창(탭)열기
         window.open(link);
-
-        //원상복구
         $selectList.slideUp();
         $select.removeClass("active");
     });

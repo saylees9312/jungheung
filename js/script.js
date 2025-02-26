@@ -45,7 +45,7 @@ $(function () {
         }
         lastScrollTop = scrollTop;
 
-        if (scrollTop < $visual.height()) {
+        if (scrollTop <= $visual.height()) {
             $header.removeClass("up");
             $header.addClass("");
         }
@@ -60,7 +60,6 @@ $(function () {
         $(this).toggleClass("active");
         $(this).siblings().removeClass("active");
         $(this).siblings().find($mobSub).stop().slideUp(duration);
-        $(this).find().preventdefault();
     });
 
     const visualSlider = new Swiper(".visual-wrap", {

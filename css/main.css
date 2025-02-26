@@ -569,7 +569,7 @@
 
 .news-wrap .news .news-hov a {
     position: absolute;
-    bottom: 10%;
+    bottom: 5%;
     right: 50%;
     transform: translateX(50%);
 
