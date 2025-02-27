@@ -47,7 +47,6 @@ $(function () {
         $(this).toggleClass("active");
         $(this).siblings().removeClass("active");
         $(this).siblings().find($mobSub).stop().slideUp(duration);
-        $(this).find().preventdefault();
     });
 
     $mainCrumbs.on("click", function () {

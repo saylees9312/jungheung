@@ -142,34 +142,35 @@ img {
     color: var(--main-color);
 }
 
-.gnb .logo figure {
+.gnb .logo a {
+    display: block;
     width: 11rem;
 }
 
-.gnb .logo figure img {
+.gnb .logo a img {
     width: 100%;
     object-fit: contain;
     transition: 0.4s;
 }
 
-.gnb .logo figure img + img {
+.gnb .logo a img + img {
     display: none;
     transition: 0.4s;
 }
 
-#header.active .gnb .logo figure img {
+#header.active .gnb .logo a img {
     display: none;
 }
 
-#header.active .gnb .logo figure img + img {
+#header.active .gnb .logo a img + img {
     display: block;
 }
 
-#header.up .gnb .logo figure img {
+#header.up .gnb .logo a img {
     display: none;
 }
 
-#header.up .gnb .logo figure img + img {
+#header.up .gnb .logo a img + img {
     display: block;
 }
 
@@ -182,7 +183,7 @@ img {
     display: block;
     width: 2.5rem;
     height: 2.5rem;
-    background: url(../img/ico-tab-menu-m.svg) no-repeat 50% / contain;
+    background: url(../img/ico-tab-menu.svg) no-repeat 50% / contain;
 }
 
 .menu {

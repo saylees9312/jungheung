@@ -69,8 +69,8 @@ $(function () {
         speed: 3000,
         // Navigation arrows
         navigation: {
-            nextEl: document.querySelector(".visual-wrap.swbtn-next"),
-            prevEl: document.querySelector(".visual-wrap.swbtn-prev"),
+            nextEl: ".visual-btn-next",
+            prevEl: ".visual-btn-prev",
         },
     });
     console.log(visualSlider, document.querySelector(".swbtn-next"));
